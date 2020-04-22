@@ -12,8 +12,6 @@ The Goal of this report is to understand what they are the most suitable to:
 +	Support Schema evolution, allowing us to change schema of file
 +	Support advanced compression through various available compression codecs (Bzip2, LZO, Sappy). That allow to reduce data storage space on disk, increase the performance of lecture and readable on the disc and also the transfer speed in the network.
 
-
-
 ## **Row-based file format**
 ------
 ### 1. CSV
@@ -24,6 +22,8 @@ Advantage : human-readable and easy to edit manually; provide a straightforward 
 
 Drawback : don’t manage Null value and not standard for Big data
 
+![csv](https://user-images.githubusercontent.com/51121757/80033301-616a7c80-84e4-11ea-80e4-b03bffc27669.JPG)
+
 ### 2. JSON (JavaScript object notation) and XML
 
 Json is represented as key-value pairs in partially structured format. It store data to the hierarchical format. It is self-describing and readable. It is very smaller in term of size. Json is often used in network communication; also in serialize of deserialize data. His kind of storage (row based data ) can be optimized by containing parquets or avro format.
@@ -32,6 +32,8 @@ Many Batches or Stream data processing models natively support JSON serializatio
 __Advantage__ : JSON support hierarchical structures and a lists of objects; widely used for NoSQL 
 
 __Drawback__ : Xml is less readable compared to Json
+
+![Json versus xml](https://user-images.githubusercontent.com/51121757/80033313-662f3080-84e4-11ea-8e18-35addbcee12a.JPG)
 
 ### 3 AVRO
 
@@ -43,6 +45,9 @@ AVRO has a sync marker to separate the block (splittable); typically used to wri
 
 __Drawback__ : 
 
+![avro](https://user-images.githubusercontent.com/51121757/80033375-8232d200-84e4-11ea-9531-076f72e30bea.JPG)
+
+
 ## **Colunm-based file format**
 
 ### 4. Parquet
@@ -52,6 +57,8 @@ Parquet is a binary file containing  metadata about their content. The column me
 __Advantage__ : fastest for reading workflow but very slow to write, well known in nested data structure complexes, support compression mostly with snappy algorithm. It also splittable.
 
 __Drawback__ : immutable, does not support schematic evolution. 
+
+![parqet](https://user-images.githubusercontent.com/51121757/80033382-852dc280-84e4-11ea-8fbb-f29ef9d06ff1.JPG)
 
 ### 5. ORC
 
@@ -68,7 +75,23 @@ __Advantage__:
 
 __Drawback__: No splittable, No compressible and don’t support MapReduce
 
+![protocole](https://user-images.githubusercontent.com/51121757/80033392-8828b300-84e4-11ea-84df-01326a4b56ac.JPG)
+
 Summary
 ORC, parquet and Avro could be move between differents node 
+
+[I'm an inline-style link](https://www.google.com)
+
+
+
+
+
+                                                                                                                    Source:
+
+
+
+
+
+
 
 
