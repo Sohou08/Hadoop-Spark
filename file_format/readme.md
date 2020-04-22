@@ -46,7 +46,7 @@ AVRO has a sync marker to separate the block (splittable); typically used to wri
 __Drawback__ : 
 
 ![avro](https://user-images.githubusercontent.com/51121757/80033375-8232d200-84e4-11ea-9531-076f72e30bea.JPG)
-                                                                                             [Source:](https://blog.clairvoyantsoft.com/big-data-file-formats-3fb659903271)
+                                                                                             [Source](https://blog.clairvoyantsoft.com/big-data-file-formats-3fb659903271)
 
 ## **Colunm-based file format**
 
@@ -59,7 +59,7 @@ __Advantage__ : fastest for reading workflow but very slow to write, well known 
 __Drawback__ : immutable, does not support schematic evolution. 
 
 ![parqet](https://user-images.githubusercontent.com/51121757/80033382-852dc280-84e4-11ea-8fbb-f29ef9d06ff1.JPG)
-                                                                                                   [Source:](https://netjs.blogspot.com/2018/07/parquet-file-format-in-hadoop.html) 
+                                                                                                   [Source](https://netjs.blogspot.com/2018/07/parquet-file-format-in-hadoop.html) 
 
 ### 5. ORC
 
@@ -77,7 +77,7 @@ __Advantage__:
 __Drawback__: No splittable, No compressible and don’t support MapReduce
 
 ![protocole](https://user-images.githubusercontent.com/51121757/80033392-8828b300-84e4-11ea-84df-01326a4b56ac.JPG)
-
+                                                                                                      [Source](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/) 
 Summary
 ORC, parquet and Avro could be move between differents node 
 
@@ -87,8 +87,7 @@ ORC, parquet and Avro could be move between differents node
 
 
 
-                                                                                                                    Source:
-
+                                                                                                                    
 
 
 
