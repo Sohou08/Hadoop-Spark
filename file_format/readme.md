@@ -46,7 +46,7 @@ AVRO has a sync marker to separate the block (splittable); typically used to wri
 __Drawback__ : 
 
 ![avro](https://user-images.githubusercontent.com/51121757/80033375-8232d200-84e4-11ea-9531-076f72e30bea.JPG)
-                                                                                             [Source](https://blog.clairvoyantsoft.com/big-data-file-formats-3fb659903271)
+                                                                                               [Source](https://blog.clairvoyantsoft.com/big-data-file-formats-3fb659903271)
 
 ## **Colunm-based file format**
 
@@ -59,7 +59,7 @@ __Advantage__ : fastest for reading workflow but very slow to write, well known 
 __Drawback__ : immutable, does not support schematic evolution. 
 
 ![parqet](https://user-images.githubusercontent.com/51121757/80033382-852dc280-84e4-11ea-8fbb-f29ef9d06ff1.JPG)
-                                                                                                   [Source](https://netjs.blogspot.com/2018/07/parquet-file-format-in-hadoop.html) 
+                                                                                               [Source](https://netjs.blogspot.com/2018/07/parquet-file-format-in-hadoop.html) 
 
 ### 5. ORC
 
@@ -69,8 +69,8 @@ __Advantage__ : ORC improves performance reading, writing, and processing in Hiv
  (due to his type of storage)
 __Drawback__ : Can’t be load data directly into ORCFILE, increases CPU overhead by increasing the time it takes to decompress the relational data, Specific version (Hive 0.11)
 
-![ORC](https://user-images.githubusercontent.com/51121757/80034241-05085c80-84e6-11ea-8617-0757edf1f52c.JPG)
-                                                                                                    [Source](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+ORC) 
+![ORC](https://user-images.githubusercontent.com/51121757/80036471-b066e080-84e9-11ea-9525-2a1a4c26104d.JPG)
+                                                                                               [Source](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+ORC) 
 
 ### 6. Protocol Buffer
 
@@ -80,7 +80,7 @@ __Advantage__:
 __Drawback__: No splittable, No compressible and don’t support MapReduce
 
 ![protocole](https://user-images.githubusercontent.com/51121757/80033392-8828b300-84e4-11ea-84df-01326a4b56ac.JPG)
-                                                                                                  [Source](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/) 
+                                                                                               [Source](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/) 
                                                                                                                                                                                                                                                                  
 ## Summary
 CSV and Json are less suitable for stockage or data analysis.  However Json is very efficient format to share data in a metwork communication. Most of the community of big data considere parquet, ORC and avro the more optimized in this domain due to their splittability, compression support. In practice, row-oriented storage layouts are well-suited for OLTP-like workloads whereas
