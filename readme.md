@@ -14,6 +14,7 @@ The Goal is to understand what files between them are suitable:
 **Row based file format**
 ------
 1. CSV
+
 It’s commonly used to exchange tabular data between systems using plan text, splittable , less compressible file.
 
 Advantage : human-readable and easy to edit manually; provide a straightforward information schema;  processed by almost all existing applications; simple to implement and parse, write performance but slow to read
