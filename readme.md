@@ -13,7 +13,7 @@ The Goal is to understand what files between them are suitable:
 
 **Row based file format**
 ------
-1. CSV
+# 1. CSV
 
 It’s commonly used to exchange tabular data between systems using plan text, splittable , less compressible file.
 
