@@ -69,6 +69,9 @@ __Advantage__ : ORC improves performance reading, writing, and processing in Hiv
  (due to his type of storage)
 __Drawback__ : Can’t be load data directly into ORCFILE, increases CPU overhead by increasing the time it takes to decompress the relational data, Specific version (Hive 0.11)
 
+![ORC](https://user-images.githubusercontent.com/51121757/80034241-05085c80-84e6-11ea-8617-0757edf1f52c.JPG)
+                                                                                                    [Source](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+ORC) 
+
 ### 6. Protocol Buffer
 
 It is a binary encoding format that allows you to specify a schema for your data using a specification language. It used for serialize of structured data.
@@ -78,7 +81,8 @@ __Drawback__: No splittable, No compressible and don’t support MapReduce
 
 ![protocole](https://user-images.githubusercontent.com/51121757/80033392-8828b300-84e4-11ea-84df-01326a4b56ac.JPG)
                                                                                                       [Source](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/) 
-Summary
+                                                                                                                                                                                                                                                                 
+## Summary
 ORC, parquet and Avro could be move between differents node 
 
 
