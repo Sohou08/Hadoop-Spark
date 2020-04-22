@@ -1,6 +1,6 @@
 
-### Comparison between file formarts(ORC, CSV, JSON)
-#### CSV format 
+## Comparison between file formarts(ORC, CSV, JSON)
+## CSV format 
 
 
 It’s commonly used to exchange tabular data between systems using plan text, splittable , less compressible file. It’s a row-based file format. 
