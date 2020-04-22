@@ -12,7 +12,7 @@ The Goal of this report is to understand what they are the most suitable to:
 
 
 
-##**Row based file format**
+## **Row based file format**
 ------
 ### 1. CSV
 
