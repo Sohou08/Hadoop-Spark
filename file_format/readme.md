@@ -2,7 +2,7 @@
 
 FILE COMPARISON BETWEEN 
 
-The Goal is to understand what files between them are suitable:
+The Goal is to understand what files between them are suitable to:
 
 + Get read fast (mainly the case of row based storage)
 + Get written fast (mainly the case row based storage)
