@@ -1,20 +1,20 @@
 
 
-## FILE COMPARISON BETWEEN CSV, ORC, JSON, PROTOCOLE BUFFER, AVRO, PARQUET, XML ##
+# FILE COMPARISON BETWEEN CSV, ORC, JSON, PROTOCOLE BUFFER, AVRO, PARQUET, XML #
 
-The Goal is to understand what files between them are suitable:
+The Goal of this report is to understand what they are the most suitable to:
 +	Get read fast (mainly the case of row based storage)
-+	Get written fast (mainly the case row based storage)
-+	Executed quickly a OLAP or OLTP query 
++	Get written fast (case of row based storage)
++	perform OLAP or OLTP query 
 +	Be splittable i.e. multiple task can run parallel on parts of file
 +	Support Schema evolution, allowing us to change schema of file
 +	Support advanced compression through various available compression codecs (Bzip2, LZO, Sappy). That allow to reduce data storage space on disk, increase the performance of lecture and readable on the disc and also the transfer speed in the network.
 
 
 
-**Row based file format**
+     **Row based file format**
 ------
-# 1. CSV
+## 1. CSV
 
 It’s commonly used to exchange tabular data between systems using plan text, splittable , less compressible file.
 
@@ -22,7 +22,7 @@ Advantage : human-readable and easy to edit manually; provide a straightforward 
 
 Drawback : don’t manage Null value and not standard for Big data
 
-# 2. JSON (JavaScript object notation) and XML
+## 2. JSON (JavaScript object notation) and XML
 
 Json is represented as key-value pairs in partially structured format. It store data to the hierarchical format. It is self-describing and readable. It is smaller in term of size. Json is often used in network communication; also in serialize of deserialize data. His kind of storage (row based data ) can be optimized by containing parquets or avro format.
 Many Batches or Stream data processing models natively support JSON serialization and deserialization. It attach metadata to the data in each record. 
