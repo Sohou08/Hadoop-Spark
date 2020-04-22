@@ -80,10 +80,11 @@ __Advantage__:
 __Drawback__: No splittable, No compressible and don’t support MapReduce
 
 ![protocole](https://user-images.githubusercontent.com/51121757/80033392-8828b300-84e4-11ea-84df-01326a4b56ac.JPG)
-                                                                                                      [Source](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/) 
+                                                                                                  [Source](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/) 
                                                                                                                                                                                                                                                                  
 ## Summary
-ORC, parquet and Avro could be move between differents node 
+CSV and Json are less suitable for stockage or data analysis.  However Json is very efficient format to share data in a metwork communication. Most of the community of big data considere parquet, ORC and avro the more optimized in this domain due to their splittability, compression support. In practice, row-oriented storage layouts are well-suited for OLTP-like workloads whereas
+column-oriented storage layouts are well-suited for OLAP-like workloads (e.g., data warehouses) which typically involve a smaller number of highly complex queries over all data (possibly terabytes).
 
 
 
