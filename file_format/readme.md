@@ -20,7 +20,7 @@ __Advantage__ : human-readable and easy to edit manually; provide a straightforw
 
 __Drawback__ : doesn't manage Null value and not standard for Big data
 
-![csv](https://user-images.githubusercontent.com/51121757/80033301-616a7c80-84e4-11ea-80e4-b03bffc27669.JPG)
+[i.e Csv file](https://user-images.githubusercontent.com/51121757/80033301-616a7c80-84e4-11ea-80e4-b03bffc27669.JPG)
 
 ### 2. JSON (JavaScript object notation) and XML
 
@@ -31,7 +31,7 @@ __Advantage__ : JSON support hierarchical structures; widely used for NoSQL
 
 __Drawback__ : Xml is less readable compared to Json
 
-![Json versus xml](https://user-images.githubusercontent.com/51121757/80033313-662f3080-84e4-11ea-8e18-35addbcee12a.JPG)
+[i.e Json versus xml](https://user-images.githubusercontent.com/51121757/80033313-662f3080-84e4-11ea-8e18-35addbcee12a.JPG)
 
 ### 3 AVRO
 
@@ -56,7 +56,7 @@ __Advantage__ : fastest for reading workflow but very slow to write, well known 
 
 __Drawback__ : immutable, does not support schematic evolution. 
 
-![parqet](https://user-images.githubusercontent.com/51121757/80033382-852dc280-84e4-11ea-8fbb-f29ef9d06ff1.JPG)
+[i.e Parqet file](https://user-images.githubusercontent.com/51121757/80033382-852dc280-84e4-11ea-8fbb-f29ef9d06ff1.JPG)
      [Source](https://netjs.blogspot.com/2018/07/parquet-file-format-in-hadoop.html) 
 
 ### 5. ORC
@@ -67,7 +67,7 @@ __Advantage__ : ORC improves performance reading, writing, and processing in Hiv
  (due to his type of storage)
 __Drawback__ : Can’t be load data directly into ORCFILE, increases CPU overhead by increasing the time it takes to decompress the relational data, Specific version (Hive 0.11)
 
-![ORC](https://user-images.githubusercontent.com/51121757/80036471-b066e080-84e9-11ea-9525-2a1a4c26104d.JPG)
+[i.e ORC file](https://user-images.githubusercontent.com/51121757/80036471-b066e080-84e9-11ea-9525-2a1a4c26104d.JPG)
      [Source](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+ORC) 
 
 ### 6. Protocol Buffer
@@ -78,7 +78,7 @@ __Advantage__: ?
 
 __Drawback__: No splittable, Less compressible and don’t support MapReduce
 
-![protocole](https://user-images.githubusercontent.com/51121757/80033392-8828b300-84e4-11ea-84df-01326a4b56ac.JPG)
+[i.e Protocole buffer](https://user-images.githubusercontent.com/51121757/80033392-8828b300-84e4-11ea-84df-01326a4b56ac.JPG)
        [Source](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/) 
                                                                                                                                                                  
 ## Summary
