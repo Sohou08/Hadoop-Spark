@@ -2,10 +2,9 @@
 
 # BIG DATA FILE FORMATS: BENCHMARK STUDY BETWEEN CSV, ORC, JSON, PROTOCOLE BUFFER, AVRO, PARQUET, XML #
 
-The ecosystem big data (Hadoop, Spark) support multiples kind of file format which can be used depending the
+The ecosystem big data (Hadoop, Spark) support multiples kind of file format which can be used depending of the use case. Thus, goal of this report is to understand what they are the most suitable to:
 
-The Goal of this report is to understand what they are the most suitable to:
-+	Get read fast (mainly the case of row based storage)
++	Get read fast (case of row based storage)
 +	Get written fast (case of row based storage)
 +	perform OLAP or OLTP query 
 +	Be splittable i.e. multiple task can run parallel on parts of file
