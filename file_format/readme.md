@@ -46,7 +46,7 @@ __Drawback__ :
 [i.e AVRO file](https://user-images.githubusercontent.com/51121757/80033375-8232d200-84e4-11ea-9531-076f72e30bea.JPG)
     [Source](https://blog.clairvoyantsoft.com/big-data-file-formats-3fb659903271)
 
-## **Colunm-based file format**
+## **Column-based file format**
 
 ### 4. Parquet
 
