@@ -79,14 +79,16 @@ __Drawback__: No splittable, Less compressible and don’t support MapReduce
 
 ![protocole](https://user-images.githubusercontent.com/51121757/80033392-8828b300-84e4-11ea-84df-01326a4b56ac.JPG)
                                                                                                [Source](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/) 
-                                                                                                                                                                                                                                                                 
+                                                                                                                                                                                                                                                     
 ## Summary
 CSV and Json are less suitable for stockage or data analysis.  However Json is very efficient format to share data in a metwork communication. The majority of the community big data consider parquet, ORC and avro the more optimized in this domain due to their splittability, compression support. 
 In practice, row-oriented storage layouts are well-suited for OLTP-like workloads whereas column-oriented storage layouts are well-suited for OLAP-like workloads (e.g., data warehouses) which typically involve a smaller number of highly complex queries over all data (possibly terabytes). Parquet and ORC file formats are widely adopted options on query engine mainly of OLAP query.
 
 #### Tips
 __Binary_format__ : This is designed for efficient data processing by the CPU
+
 __Compression__:  Compressed data reduces the reading time,thus the delay of data processing. Snappy is optimized for speed of execution, especially when decompressing data
+
 __Serialisation__ : Serialization is a process of converting a file into a stream of bytes.
  
 
