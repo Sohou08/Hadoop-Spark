@@ -44,7 +44,7 @@ AVRO has a sync marker to separate the block (splittable); typically used to wri
 __Drawback__ : 
 
 ![avro](https://user-images.githubusercontent.com/51121757/80033375-8232d200-84e4-11ea-9531-076f72e30bea.JPG)
-                                                                                               [Source](https://blog.clairvoyantsoft.com/big-data-file-formats-3fb659903271)
+    [Source](https://blog.clairvoyantsoft.com/big-data-file-formats-3fb659903271)
 
 ## **Colunm-based file format**
 
@@ -57,7 +57,7 @@ __Advantage__ : fastest for reading workflow but very slow to write, well known 
 __Drawback__ : immutable, does not support schematic evolution. 
 
 ![parqet](https://user-images.githubusercontent.com/51121757/80033382-852dc280-84e4-11ea-8fbb-f29ef9d06ff1.JPG)
-                                                                                               [Source](https://netjs.blogspot.com/2018/07/parquet-file-format-in-hadoop.html) 
+     [Source](https://netjs.blogspot.com/2018/07/parquet-file-format-in-hadoop.html) 
 
 ### 5. ORC
 
@@ -68,7 +68,7 @@ __Advantage__ : ORC improves performance reading, writing, and processing in Hiv
 __Drawback__ : Can’t be load data directly into ORCFILE, increases CPU overhead by increasing the time it takes to decompress the relational data, Specific version (Hive 0.11)
 
 ![ORC](https://user-images.githubusercontent.com/51121757/80036471-b066e080-84e9-11ea-9525-2a1a4c26104d.JPG)
-                                                                                               [Source](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+ORC) 
+     [Source](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+ORC) 
 
 ### 6. Protocol Buffer
 
@@ -79,8 +79,8 @@ __Advantage__: ?
 __Drawback__: No splittable, Less compressible and don’t support MapReduce
 
 ![protocole](https://user-images.githubusercontent.com/51121757/80033392-8828b300-84e4-11ea-84df-01326a4b56ac.JPG)
-                                                                                               [Source](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/) 
-                                                                                                                                                                                                                                                     
+       [Source](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/) 
+                                                                                                                                                                 
 ## Summary
 CSV and Json are less suitable for stockage or data analysis.  However Json is very efficient format to share data in a metwork communication. The majority of the community big data consider parquet, ORC and avro the more optimized in this domain due to their splittability, compression support. 
 In practice, row-oriented storage layouts are well-suited for OLTP-like workloads whereas column-oriented storage layouts are well-suited for OLAP-like workloads (e.g., data warehouses) which typically involve a smaller number of highly complex queries over all data (possibly terabytes). Parquet and ORC file formats are widely adopted options on query engine mainly of OLAP query.
@@ -90,10 +90,16 @@ __Binary_format__ : This is designed for efficient data processing by the CPU
 
 __Compression__:  Compressed data reduces the reading time,thus the delay of data processing. Snappy is optimized for speed of execution, especially when decompressing data
 
-__Serialisation__ : Serialization is a process of converting a file into a stream of bytes.
+__Serialization__ : Serialization is a process of converting a file into a stream of bytes.
  
 
 ## Reference
+https://luminousmen.com/post/big-data-file-formats
+https://datafloq.com/read/5-tips-for-compressing-big-data/7138
+https://blog.clairvoyantsoft.com/big-data-file-formats-3fb659903271
+https://medium.com/@alexia.audevart/comment-stocker-ses-donn%C3%A9es-dans-hadoop-f2d7ed78e614
+https://www.cetic.be/Apache-Parquet-pour-le-stockage-de-donnees-volumineuses
+https://engineering.creditkarma.com/json-and-the-confusion-of-formats-in-big-data/
 
 
 
