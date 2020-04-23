@@ -73,6 +73,7 @@ __Drawback__ : Can’t be load data directly into ORCFILE, increases CPU overhea
 ### 6. Protocol Buffer
 
 It is a binary encoding format that allows you to specify a schema for your data using a specification language. It used for serialize of structured data.
+
 __Advantage__: ?
 
 __Drawback__: No splittable, Less compressible and don’t support MapReduce
