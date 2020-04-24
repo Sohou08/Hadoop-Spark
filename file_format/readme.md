@@ -73,7 +73,7 @@ __Drawback__ : Can’t be load data directly into ORCFILE, increases CPU overhea
 [e.g. ORC file](https://user-images.githubusercontent.com/51121757/80036471-b066e080-84e9-11ea-9525-2a1a4c26104d.JPG):
      [Source](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+ORC) 
 
-## **Particular File format **
+## ** Particular File format **
 
 ### 6. Protocol Buffer
 
