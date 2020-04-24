@@ -58,7 +58,7 @@ __Advantage__ : fastest for reading workflow but very slow to write, well known 
 
 __Drawback__ : immutable, does not support schematic evolution. 
 
-[e.g. Parqet file](https://user-images.githubusercontent.com/51121757/80033382-852dc280-84e4-11ea-8fbb-f29ef9d06ff1.JPG):
+[e.g. Parquet file](https://user-images.githubusercontent.com/51121757/80033382-852dc280-84e4-11ea-8fbb-f29ef9d06ff1.JPG):
      [Source](https://netjs.blogspot.com/2018/07/parquet-file-format-in-hadoop.html) 
 
 ### 5. ORC
@@ -87,6 +87,7 @@ __Drawback__: No splittable, Less compressible and don’t support MapReduce
 CSV and Json are less suitable for stockage or data analysis.  However Json is very efficient format to share data into a network communication. The majority of the community big data consider parquet, ORC and avro the more optimized in this domain due to their splittability, compression support. 
 In practice, row-oriented storage layouts are well-suited for OLTP-like workloads whereas column-oriented storage layouts are well-suited for OLAP-like workloads (e.g., data warehouses) which typically involve a smaller number of highly complex queries over all data (possibly terabytes). Parquet and ORC file formats are widely adopted options on query engine mainly of OLAP query.
 
+[e.g C File format comparaison](https://2s7gjr373w3x22jf92z99mgm5w-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/Nexla-File-Format.png)
 
 #### Tips
 __Binary_format__ : This is designed for efficient data processing by the CPU
