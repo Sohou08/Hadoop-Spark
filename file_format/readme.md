@@ -89,7 +89,7 @@ __Drawback__: No splittable, Less compressible and don’t support MapReduce
 CSV and Json are less suitable for stockage or data analysis. However Json is very efficient format to share data into a network communication. The majority of the community big data consider parquet, ORC and avro the more optimized in this domain due to their splittability, compression support. 
 In practice, row-oriented storage layouts are well-suited for OLTP-like workloads whereas column-oriented storage layouts are well-suited for OLAP-like workloads (e.g., data warehouses) which typically involve a smaller number of highly complex queries over all data (possibly terabytes). Parquet and ORC are widely adopted options of query engine mainly of OLAP query.
 
-[e.g. File format comparaison](https://2s7gjr373w3x22jf92z99mgm5w-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/Nexla-File-Format.png), [e.g. Comparaison in term of reading, space, execution,...](https://luminousmen.com/post/big-data-file-formats)
+[e.g. File format comparaison](https://2s7gjr373w3x22jf92z99mgm5w-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/Nexla-File-Format.png), [e.g. Comparaison in terms of reading, space, execution time,...](https://luminousmen.com/post/big-data-file-formats)
 
 #### Tips
 
