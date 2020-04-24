@@ -77,22 +77,21 @@ __Drawback__ : Can’t be load data directly into ORCFILE, increases CPU overhea
 
 ### 6. Protocol Buffer
 
-It is a binary encoding format that allows you to specify a schema for your data using a specification language. It used for serialize of structured data.
+It is a binary encoding format that allows you to specify your schema data using a specification language. It used for serialize of structured data.
 
-__Advantage__: ?
+__Advantage__: appopriate to serialize data , performance 
 
 __Drawback__: No splittable, Less compressible and don’t support MapReduce
 
 [e.g. Protocole buffer](https://user-images.githubusercontent.com/51121757/80033392-8828b300-84e4-11ea-84df-01326a4b56ac.JPG):
        [Source](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/)                                                                                                                                                           
 ##  Overview
-CSV and Json are less suitable for stockage or data analysis.  However Json is very efficient format to share data into a network communication. The majority of the community big data consider parquet, ORC and avro the more optimized in this domain due to their splittability, compression support. 
+CSV and Json are less suitable for stockage or data analysis. However Json is very efficient format to share data into a network communication. The majority of the community big data consider parquet, ORC and avro the more optimized in this domain due to their splittability, compression support. 
 In practice, row-oriented storage layouts are well-suited for OLTP-like workloads whereas column-oriented storage layouts are well-suited for OLAP-like workloads (e.g., data warehouses) which typically involve a smaller number of highly complex queries over all data (possibly terabytes). Parquet and ORC are widely adopted options of query engine mainly of OLAP query.
 
-[e.g. File format comparaison](https://2s7gjr373w3x22jf92z99mgm5w-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/Nexla-File-Format.png), [e.g.](https://luminousmen.com/post/big-data-file-formats)
+[e.g. File format comparaison](https://2s7gjr373w3x22jf92z99mgm5w-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/Nexla-File-Format.png), [e.g. Comparaison in term of reading, space, execution,...](https://luminousmen.com/post/big-data-file-formats)
 
 #### Tips
-__Binary_format__ : This is designed for efficient data processing by the CPU
 
 __Compression__:  Compressed data reduces the reading time,thus the delay of data processing. Snappy is optimized for speed of execution, especially when decompressing data
 
