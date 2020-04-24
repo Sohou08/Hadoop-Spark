@@ -86,8 +86,8 @@ __Drawback__: No splittable, Less compressible and don’t support MapReduce
 [e.g. Protocole buffer](https://user-images.githubusercontent.com/51121757/80033392-8828b300-84e4-11ea-84df-01326a4b56ac.JPG):
        [Source](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/)                                                                                                                                                           
 ##  Overview
-CSV and Json are less suitable for stockage or data analysis. However Json is very efficient format to share data into a network communication. The majority of the community big data consider parquet, ORC and avro the more optimized in this domain due to their splittability, compression support. 
-In practice, row-oriented storage layouts are well-suited for OLTP-like workloads whereas column-oriented storage layouts are well-suited for OLAP-like workloads (e.g., data warehouses) which typically involve a smaller number of highly complex queries over all data (possibly terabytes). Parquet and ORC are widely adopted options of query engine mainly of OLAP query.
+CSV and Json are less suitable for stockage or data analysis. However Json is a standard format to share data over the network. The majority of the community big data consider parquet, ORC and avro the more optimized in this domain due to their splittability, compression support. 
+In practice, row-oriented storage layouts are well-suited for OLTP-like workloads whereas column-oriented storage layouts are well-suited for OLAP-like workloads (e.g., data warehouses) which typically involve a smaller number of highly complex queries over all data (possibly terabytes). Parquet and ORC are widely adopted options of query engine mainly of OLAP query. They are also more efficient in term of space utilization, processing data than CSV and JSON file.
 
 [e.g. File format comparaison](https://2s7gjr373w3x22jf92z99mgm5w-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/Nexla-File-Format.png), [e.g. Comparaison in terms of reading, space,storage, execution time,...](https://luminousmen.com/post/big-data-file-formats)
 
@@ -99,8 +99,7 @@ __Serialization__ : Serialization is a process of converting a file into a strea
  
 
 
-
-
+[Let's test all these differences practically] ()
 
                                                                                                                     
 
