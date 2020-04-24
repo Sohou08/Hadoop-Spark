@@ -92,7 +92,8 @@ In practice, row-oriented storage layouts are well-suited for OLTP-like workload
 
 #### Tips
 
-__Compression__:  Compressed data reduces the reading time,thus the delay of data processing. Snappy is optimized for speed of execution, especially when decompressing data
+__Compression__:  Compressed data reduces the reading time,thus the delay of data processing. Snappy is optimized for speed of execution, especially when decompressing data. Gzip is more optimized to compression than decompression. Snappy seem to be suitable for Hot data whereas Gzipp and bzip2 are used for cold data.
+
 
 __Serialization__ : Serialization is a process of converting a file into a stream of bytes.
  
