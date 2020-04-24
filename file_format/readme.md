@@ -35,7 +35,7 @@ __Drawback__ : Xml is less readable compared to Json
 
 [i.e Json versus xml](https://user-images.githubusercontent.com/51121757/80033313-662f3080-84e4-11ea-8e18-35addbcee12a.JPG)
 
-### 3 AVRO
+### 3. AVRO
 
 AVRO is highly splittable and compressible. It also described as a data serialization system and deserialization. The schema is stored in JSON format while the data is stored in binary format, minimizing file size and maximizing efficiency and to be compacted easily. This following propriety allow it to be supported in many different programming languages ((python, C, C++, …) .
 It’s a good candidate for data storage in Hadoop ecosystem. AVRO has an enough capacity to manage the schema evolution (at different time and independently).
