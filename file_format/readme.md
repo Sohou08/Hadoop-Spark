@@ -14,7 +14,7 @@ Big data ecosystem (Hadoop, Apache) support multiples types of files formats acc
 ------
 ### 1. CSV
 
-CSV is a text Input Format. It represents a lines of comma separated fields with an optional header. CSV is splittable , less compressible file due to the execution time unoptimized during a decompressing data.
+CSV is a text Input Format. It represents a lines of comma separated fields with an optional header. CSV is splittable , less compressible file (bzip2) which can due to the execution time unoptimized during a decompressing data.
 
 __Advantage__ : CS is human-readable and easy to edit manually; provide a straightforward information schema;  processed by almost all existing applications; simple to implement and parse, write performance but slow to read
 
@@ -24,8 +24,7 @@ __Drawback__ : doesn't manage Null value and not standard for Big data
 
 ### 2. JSON (JavaScript object notation) and XML
 
-JSON is a text Input Format and contain a list of objects. It is represented as key-value pairs in partially structured format. It is very smaller in term of size. His kind of storage (row based data ) can be optimized by containing parquets or avro format.
-JSON is compared to XML due to the fact it can store data in hierarchical format. Both are user-readable but JSON is much smaller than XML. There are commonly used in network communication.
+JSON is a text Input Format and contain a list of objects. It is represented as key-value pairs in partially structured format. His kind of storage (row based data ) can be optimized by containing parquets or avro format. JSON is compared to XML due to the fact it can store data in hierarchical format. Both are user-readable but JSON is much smaller than XML. There are commonly used in network communication.
 Many Batches or Stream data processing models natively support JSON serialization and deserialization. It attach metadata into their data in each record. 
 
 
@@ -37,7 +36,7 @@ __Drawback__ : Xml is less readable compared to Json
 
 ### 3. AVRO
 
-AVRO is highly splittable and compressible. It also described as a data serialization system and deserialization. The schema is stored in JSON format while the data is stored in binary format, minimizing file size and maximizing efficiency and to be compacted easily. This following propriety allow it to be supported in many different programming languages ((python, C, C++, …) .
+AVRO is highly splittable and compressible. It also described as a data serialization system and deserialization. The schema is stored in JSON format while the data is stored in binary format, minimizing file size and maximizing efficiency and to be compacted easily. This following propriety allow it to be supported in many different programming languages (python, C, C++, …) .
 It’s a good candidate for data storage in Hadoop ecosystem. AVRO has an enough capacity to manage the schema evolution (at different time and independently).
 
 __Advantage__ : His proprety about serialization and deserialization bring it a very good ingestion performance.
