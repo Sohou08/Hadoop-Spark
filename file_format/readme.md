@@ -7,13 +7,13 @@ Big data ecosystem (Hadoop, Apache) support multiples types of files formats acc
 +	Get written fast 
 +	perform OLAP or OLTP query 
 +	Be splittable i.e. multiple task can run parallel on parts of file
++   Streaming and B
 +	Support Schema evolution, allowing us to change schema of file
 +	Support advanced compression through various available compression codecs (Bzip2, LZO, Sappy). That allow to reduce data storage space on disk; increase the performance of lecture and readable on the disc ; also improve the speed of file transfer over the network.
 
 ## **Row-based file format**
 ------
-### 1. CSV
-
+### 1. CSV 
 CSV is a text Input Format. It represents a lines of comma separated fields with an optional header. CSV is splittable , less compressible file (bzip2) which can due to the execution time unoptimized during a decompressing data.
 
 __Advantage__ : CS is human-readable and easy to edit manually; provide a straightforward information schema;  processed by almost all existing applications; simple to implement and parse, write performance but slow to read
