@@ -20,7 +20,7 @@ __Advantage__ : CS is human-readable and easy to edit manually; provide a straig
 
 __Drawback__ : doesn't manage Null value and not standard for Big data
 
-[i.e Csv file](https://user-images.githubusercontent.com/51121757/80033301-616a7c80-84e4-11ea-80e4-b03bffc27669.JPG)
+[e.g. Csv file](https://user-images.githubusercontent.com/51121757/80033301-616a7c80-84e4-11ea-80e4-b03bffc27669.JPG)
 
 ### 2. JSON (JavaScript object notation) and XML
 
@@ -33,7 +33,7 @@ __Advantage__ : JSON support hierarchical structures; exchange formats for hot d
 
 __Drawback__ : Xml is less readable compared to Json
 
-[i.e Json versus xml](https://user-images.githubusercontent.com/51121757/80033313-662f3080-84e4-11ea-8e18-35addbcee12a.JPG)
+[e.g. Json versus xml](https://user-images.githubusercontent.com/51121757/80033313-662f3080-84e4-11ea-8e18-35addbcee12a.JPG)
 
 ### 3. AVRO
 
@@ -45,7 +45,7 @@ AVRO has a sync marker to separate the block (splittable); typically used to wri
 
 __Drawback__ : heavy to read
 
-[i.e AVRO file](https://user-images.githubusercontent.com/51121757/80033375-8232d200-84e4-11ea-9531-076f72e30bea.JPG):
+[e.g. AVRO file](https://user-images.githubusercontent.com/51121757/80033375-8232d200-84e4-11ea-9531-076f72e30bea.JPG):
     [Source](https://blog.clairvoyantsoft.com/big-data-file-formats-3fb659903271)
 
 ## **Column-based file format**
@@ -58,7 +58,7 @@ __Advantage__ : fastest for reading workflow but very slow to write, well known 
 
 __Drawback__ : immutable, does not support schematic evolution. 
 
-[i.e Parqet file](https://user-images.githubusercontent.com/51121757/80033382-852dc280-84e4-11ea-8fbb-f29ef9d06ff1.JPG):
+[e.g. Parqet file](https://user-images.githubusercontent.com/51121757/80033382-852dc280-84e4-11ea-8fbb-f29ef9d06ff1.JPG):
      [Source](https://netjs.blogspot.com/2018/07/parquet-file-format-in-hadoop.html) 
 
 ### 5. ORC
@@ -69,7 +69,7 @@ __Advantage__ : ORC improves performance reading, writing, and processing in Hiv
  (due to his type of storage)
 __Drawback__ : Can’t be load data directly into ORCFILE, increases CPU overhead by increasing the time it takes to decompress the relational data, Specific version (Hive 0.11)
 
-[i.e ORC file](https://user-images.githubusercontent.com/51121757/80036471-b066e080-84e9-11ea-9525-2a1a4c26104d.JPG):
+[e.g. ORC file](https://user-images.githubusercontent.com/51121757/80036471-b066e080-84e9-11ea-9525-2a1a4c26104d.JPG):
      [Source](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+ORC) 
 
 ### 6. Protocol Buffer
@@ -80,12 +80,13 @@ __Advantage__: ?
 
 __Drawback__: No splittable, Less compressible and don’t support MapReduce
 
-[i.e Protocole buffer](https://user-images.githubusercontent.com/51121757/80033392-8828b300-84e4-11ea-84df-01326a4b56ac.JPG):
+[e.g. Protocole buffer](https://user-images.githubusercontent.com/51121757/80033392-8828b300-84e4-11ea-84df-01326a4b56ac.JPG):
        [Source](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/) 
                                                                                                                                                                  
-## Summary
+##  Overview
 CSV and Json are less suitable for stockage or data analysis.  However Json is very efficient format to share data into a network communication. The majority of the community big data consider parquet, ORC and avro the more optimized in this domain due to their splittability, compression support. 
 In practice, row-oriented storage layouts are well-suited for OLTP-like workloads whereas column-oriented storage layouts are well-suited for OLAP-like workloads (e.g., data warehouses) which typically involve a smaller number of highly complex queries over all data (possibly terabytes). Parquet and ORC file formats are widely adopted options on query engine mainly of OLAP query.
+
 
 #### Tips
 __Binary_format__ : This is designed for efficient data processing by the CPU
