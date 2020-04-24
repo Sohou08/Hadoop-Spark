@@ -14,7 +14,7 @@ Big data ecosystem (Hadoop, Apache) support multiples types of files formats acc
 ------
 ### 1. CSV
 
-CSV is a text Input Format. It represents a lines of comma separated fields with an optional header. CSV is splittable , less compressible file.
+CSV is a text Input Format. It represents a lines of comma separated fields with an optional header. CSV is splittable , less compressible file due to the execution time unoptimized during a decompressing data.
 
 __Advantage__ : CS is human-readable and easy to edit manually; provide a straightforward information schema;  processed by almost all existing applications; simple to implement and parse, write performance but slow to read
 
@@ -67,10 +67,13 @@ The ORC format can only support Hive (Suitable for OLAP query), lightweight file
 
 __Advantage__ : ORC improves performance reading, writing, and processing in Hive; Optimize the Cost storage
  (due to his type of storage)
+ 
 __Drawback__ : Can’t be load data directly into ORCFILE, increases CPU overhead by increasing the time it takes to decompress the relational data, Specific version (Hive 0.11)
 
 [e.g. ORC file](https://user-images.githubusercontent.com/51121757/80036471-b066e080-84e9-11ea-9525-2a1a4c26104d.JPG):
      [Source](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+ORC) 
+
+## **Particular File format **
 
 ### 6. Protocol Buffer
 
@@ -81,13 +84,12 @@ __Advantage__: ?
 __Drawback__: No splittable, Less compressible and don’t support MapReduce
 
 [e.g. Protocole buffer](https://user-images.githubusercontent.com/51121757/80033392-8828b300-84e4-11ea-84df-01326a4b56ac.JPG):
-       [Source](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/) 
-                                                                                                                                                                 
+       [Source](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/)                                                                                                                                                           
 ##  Overview
 CSV and Json are less suitable for stockage or data analysis.  However Json is very efficient format to share data into a network communication. The majority of the community big data consider parquet, ORC and avro the more optimized in this domain due to their splittability, compression support. 
 In practice, row-oriented storage layouts are well-suited for OLTP-like workloads whereas column-oriented storage layouts are well-suited for OLAP-like workloads (e.g., data warehouses) which typically involve a smaller number of highly complex queries over all data (possibly terabytes). Parquet and ORC are widely adopted options of query engine mainly of OLAP query.
 
-[e.g C File format comparaison](https://2s7gjr373w3x22jf92z99mgm5w-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/Nexla-File-Format.png)
+[e.g C File format comparaison](https://2s7gjr373w3x22jf92z99mgm5w-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/Nexla-File-Format.png), [e.g.](https://luminousmen.com/post/big-data-file-formats)
 
 #### Tips
 __Binary_format__ : This is designed for efficient data processing by the CPU
