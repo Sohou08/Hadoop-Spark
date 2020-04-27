@@ -3,7 +3,7 @@
 
 Big data ecosystem (Hadoop, Apache) support multiples types of files formats according of the analysis purpose . Thus, the goal of this report is to understand what are the most suitable to:
 
-#### +	Row-based storage and column-based storage
++	__Row-based storage and column-based storage__
 
 The choice of a big data format need to known whether a row or column-based format is best suited to your objectives. At the highest level, column-based storage is most useful when performing analytics queries that require only a subset of columns examined over very large data sets. If your queries require access to all or most of the columns of each row of data, row-based storage will be better suited to your needs. 
 Row stores have the ability to write data very quickly, whereas a column store is awesome at aggregating large volumes of data for a subset of columns.
