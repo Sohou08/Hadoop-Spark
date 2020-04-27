@@ -68,7 +68,7 @@ It is splittable and support the shema evolution. It widely used in many environ
 Parquet is very efficient for OLAP query processing as ORC. Parquet is slower to write than other column formats. 
 
 
-   ![parquet](https://user-images.githubusercontent.com/51121757/80370784-ba416880-8888-11ea-87d3-ff5e271b8a58.JPG)
+   ![parquet](https://user-images.githubusercontent.com/51121757/80372035-c3333980-888a-11ea-87af-97425e00c476.JPG)
      [Source](https://blog.ippon.fr/2020/03/02/de-limportance-du-format-de-la-donnee-pratique-partie-2-2/) 
 
 ### 5. ORC
@@ -80,7 +80,7 @@ ORC reduce the size of the original data up to 75%. ORC does not support schema 
 
 It can’t be load data directly into ORCFILE, increases CPU overhead by increasing the time it takes to decompress the relational data, Specific version (Hive 0.11)
 
-![e.g. ORC file](https://user-images.githubusercontent.com/51121757/80036471-b066e080-84e9-11ea-9525-2a1a4c26104d.JPG)
+   ![ORC](https://user-images.githubusercontent.com/51121757/80372034-c29aa300-888a-11ea-9b37-0114b5a0c0c2.JPG)
      [Source](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+ORC) 
                                                                                                                                                        
 ##  Overview
@@ -92,7 +92,6 @@ In practice, row-oriented storage layouts are well-suited for OLTP-like workload
 
 [Let's test all these differences practically](https://github.com/Sohou08/Hadoop-Spark/tree/master/file_format/pratice_test)...
 
-                                                                                                                    
 
 
 
