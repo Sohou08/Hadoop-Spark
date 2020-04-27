@@ -3,11 +3,16 @@
 
 Big data ecosystem (Hadoop, Apache) support multiples types of files formats according of the analysis purpose . Thus, the goal of this report is to understand what are the most suitable to:
 
-+	Get read or written fast
++	Row-based storage and column-based storage
 +	perform OLAP or OLTP query 
 +	Be splittable i.e. multiple task can run parallel on parts of file
-+   Streaming and Batch 
+
++  Streaming and Batch 
+
 +	Support Schema evolution, allowing us to change schema of file
+
+The schema will store the definition of each attribute and its type. Unless your data is guaranteed to never change, you’ll need to think about schema evolution  in order to figure out if your data schema changes over time, does it possible to manage fields as added, deleted or renamed.
+
 +	Support advanced compression through various available compression codecs (Bzip2, LZO, Sappy). That allow to reduce data storage space on disk; increase the performance of lecture and readable on the disc ; also improve the speed of file transfer over the network.
 
 ## **Row-based file format**
