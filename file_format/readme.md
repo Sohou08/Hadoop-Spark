@@ -3,46 +3,38 @@
 
 Big data ecosystem (Hadoop, Apache) support multiples types of files formats according of the analysis purpose . Thus, the goal of this report is to understand what are the most suitable to:
 
-+	Get read fast 
-+	Get written fast 
++	Get read or written fast
 +	perform OLAP or OLTP query 
 +	Be splittable i.e. multiple task can run parallel on parts of file
-+   Streaming and B
++   Streaming and Batch 
 +	Support Schema evolution, allowing us to change schema of file
 +	Support advanced compression through various available compression codecs (Bzip2, LZO, Sappy). That allow to reduce data storage space on disk; increase the performance of lecture and readable on the disc ; also improve the speed of file transfer over the network.
 
+
 ## **Row-based file format**
 ------
-### 1. CSV 
-CSV is a text Input Format. It represents a lines of comma separated fields with an optional header. CSV is splittable , less compressible file (bzip2) which can due to the execution time unoptimized during a decompressing data.
-
-__Advantage__ : CS is human-readable and easy to edit manually; provide a straightforward information schema;  processed by almost all existing applications; simple to implement and parse, write performance but slow to read
-
-__Drawback__ : doesn't manage Null value and not standard for Big data
+### 1. CSV and TSV
+CSV and TSV are a text Input Format. CSV represents a lines of comma separated fields with an optional header.
+TVS uses TAB as a default fiel delimiter.  
+Both are splittable and compressible. They are human-readable and easy to edit manually, processed by almost all existing applications. In terms of comparaison, parsing TSV data is more simple than csv.
+They don't manage null value and generally not standart for big data
 
 [e.g. Csv file](https://user-images.githubusercontent.com/51121757/80033301-616a7c80-84e4-11ea-80e4-b03bffc27669.JPG)
 
-### 2. JSON (JavaScript object notation) and XML
 
-JSON is a text Input Format and contain a list of objects. It is represented as key-value pairs in partially structured format. His kind of storage (row based data ) can be optimized by containing parquets or avro format. JSON is compared to XML due to the fact it can store data in hierarchical format. Both are user-readable but JSON is much smaller than XML. There are commonly used in network communication.
-Many Batches or Stream data processing models natively support JSON serialization and deserialization. It attach metadata into their data in each record. 
-
-
-__Advantage__ : JSON support hierarchical structures; exchange formats for hot data and cold data warehouses; widely used for NoSQL 
-
-__Drawback__ : Xml is less readable compared to Json
+### 2. JSON (JavaScript object notation) 
+JSON is a text Input Format and can contain any form of data (string, integer, object,nested data...). JSON is compared to XML due to the fact it can store data in hierarchical format. Both are user-readable but JSON is much smaller than XML. There are commonly used in network communication. It attach metadata into their data in each record. It's not splittable due to the fact it does't contain a special character where we can based to subdivise the text e.g "\n" quote. 
+Json is widely used file format for NoSQL databases such as MongoDB, Couchbase, Azure Cosmos DB,...
 
 [e.g. Json versus xml](https://user-images.githubusercontent.com/51121757/80033313-662f3080-84e4-11ea-8e18-35addbcee12a.JPG)
 
 ### 3. AVRO
 
-AVRO is highly splittable and compressible. It also described as a data serialization system and deserialization. The schema is stored in JSON format while the data is stored in binary format, minimizing file size and maximizing efficiency and to be compacted easily. This following propriety allow it to be supported in many different programming languages (python, C, C++, …) .
-It’s a good candidate for data storage in Hadoop ecosystem. AVRO has an enough capacity to manage the schema evolution (at different time and independently).
+AVRO stored in JSON format while the data is stored in binary format, minimizing file size and maximizing efficiency and to be compacted easily. It attach metadata into their data in each record and it is compressible and splittable. AVRO has an enough capacity to manage the schema evolution (at different time and independently). 
+His proprety about serialization and deserialization bring it a very good ingestion performance.
+AVRO has a sync marker to separate the block (splittable); typically used to write-heavy workload because rows can be added simply and quickly. 
 
-__Advantage__ : His proprety about serialization and deserialization bring it a very good ingestion performance.
-AVRO has a sync marker to separate the block (splittable); typically used to write-heavy workload because rows can be added simply and quickly. His key feature is the robust support for data schema that changes over time (schema evolution) , average read/write performance. It’s the best choice if your data schema change frequently (files can renamed, added, deleted, while old files can still be read with the new schema)
 
-__Drawback__ : heavy to read
 
 [e.g. AVRO file](https://user-images.githubusercontent.com/51121757/80033375-8232d200-84e4-11ea-9531-076f72e30bea.JPG):
     [Source](https://blog.clairvoyantsoft.com/big-data-file-formats-3fb659903271)
