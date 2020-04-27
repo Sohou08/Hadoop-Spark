@@ -55,7 +55,7 @@ It is more used in case of streaming processing due to their speed of ingestion.
 ### 3. Protocol Buffer
 Protocol buffer is language-neutral, an extensible way of serializing structured data for use in communications protocols, data storage, and more. You can easily read it and understand it as a human. The data is fully  type and compressed automatically. The schema is needed to generate code and read the data. The documentation can be embedded in the schema. As many format, the data can be read across any language. 
 Like AVRO, protocol buffer support the schema evolution.
-However, it is not splittable and does't support MapReduce.
+However, it is not splittable , not compressible and does't support MapReduce.
 
    ![protocole buffer2](https://user-images.githubusercontent.com/51121757/80370785-bb729580-8888-11ea-8669-c26170bc9f5f.JPG)
 
