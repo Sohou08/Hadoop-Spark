@@ -4,16 +4,27 @@
 Big data ecosystem (Hadoop, Apache) support multiples types of files formats according of the analysis purpose . Thus, the goal of this report is to understand what are the most suitable to:
 
 +	Row-based storage and column-based storage
-+	perform OLAP or OLTP query 
+
+The choice of a big data format need to known whether a row or column-based format is best suited to your objectives. At the highest level, column-based storage is most useful when performing analytics queries that require only a subset of columns examined over very large data sets. If your queries require access to all or most of the columns of each row of data, row-based storage will be better suited to your needs. 
+Row stores have the ability to write data very quickly, whereas a column store is awesome at aggregating large volumes of data for a subset of columns.
+
++	Perform OLAP or OLTP query 
+
+OLTP is an online Transaction Processing system. The main focus of OLTP system is to record the current Update, Insertion and Deletion while transaction. OLAP is online Analytical Processing system. OLAP's main operation is to extract multidimensional data for analysis. 
+
 +	Be splittable i.e. multiple task can run parallel on parts of file
+
+Hadoop stores and processes data in blocks you must be able to begin reading data at any point within a file in order to take fullest advantage of Hadoop’s distributed processing. Thereupon, splittable files is suitable so that its massively distributed engine can leverage data locality and parallel processing. 
+
++   Support advanced compression through various available compression codecs (Bzip2, LZO, Sappy). That allow to reduce data storage space on disk; increase the performance of lecture and readable on the disc ; also improve the speed of file transfer over the network. For more information about compression.
 
 +  Streaming and Batch 
 
 +	Support Schema evolution, allowing us to change schema of file
 
-The schema will store the definition of each attribute and its type. Unless your data is guaranteed to never change, you’ll need to think about schema evolution  in order to figure out if your data schema changes over time, does it possible to manage fields as added, deleted or renamed.
+The schema will store the definition of each attribute and its type. Unless your data is guaranteed to never change, you’ll need to think about schema evolution in order to figure out if your data schema changes over time, does it possible to manage fields as added, deleted or renamed.
 
-+	Support advanced compression through various available compression codecs (Bzip2, LZO, Sappy). That allow to reduce data storage space on disk; increase the performance of lecture and readable on the disc ; also improve the speed of file transfer over the network.
+Let's describe briefly each file formats and their charactistics 
 
 ## **Row-based file format**
 
@@ -26,9 +37,10 @@ They don't manage null value and generally not standart for big data.
    ![csv-tsv](https://user-images.githubusercontent.com/51121757/80370776-b7467800-8888-11ea-9245-d0bc60d8c115.JPG)
 
 ### 2. JSON (JavaScript object notation) 
-JSON is a text Input Format and each record can be in any form (string, integer, object,nested data...). It has a schema integrated to their data. 
-JSON is compared to XML due to the fact it can store data in hierarchical format. Both are user-readable but JSON is much smaller than XML. There are commonly used in network communication. They attach metadata into their data in each record. It's not splittable due to the fact it does't contain a special character where we can based to subdivise the text e.g "\n" quote. 
-Json is widely used file format for NoSQL databases such as MongoDB, Couchbase, Azure Cosmos DB,...
+JSON is a text Input Format containing record which might be in any form (string, integer, object,nested data...). It support serialization and deserialization process. 
+JSON is compared to XML due to the fact it can store data in hierarchical format. Both are user-readable but JSON is much smaller than XML. There are commonly used in network communication.
+They stores metadata with the data, fully enabling schema evolution. However, JSON is not splittable due to the fact it does't contain a special character where we can based to subdivise the text e.g "\n" quote. 
+It is widely used file format for NoSQL databases such as MongoDB, Couchbase, Azure Cosmos DB,...
 
    ![Json versus xml](https://user-images.githubusercontent.com/51121757/80371280-8fa3df80-8889-11ea-867d-2ab16f31fb71.JPG)
 
@@ -55,7 +67,7 @@ It is more used in case of streaming processing due to their speed of ingestion.
 [Source](https://blog.clairvoyantsoft.com/big-data-file-formats-3fb659903271)
     
 ### 5. Protocol Buffer
-Protocol buffer is language-neutral, an extensible way of serializing structured data for use in communications protocols, data storage, and more. You can easily read it and understand it as a human. The data is fully  type and compressed automatically. The schema is needed to generate code and read the data. The documentation can be embedded in the schema. As many format, the data can be read across any language. 
+Protocol buffer is language-neutral, an extensible way of serializing structured data for use in communications protocols, data storage, and more. You can easily read it and understand it as an human. The data is fully  type . The schema is needed to generate code and read the data. The documentation can be embedded in the schema. As many format, the data can be read across any language. 
 Like AVRO, protocol buffer support the schema evolution.
 However, it is not splittable , not compressible and does't support MapReduce.
 
@@ -68,8 +80,10 @@ However, it is not splittable , not compressible and does't support MapReduce.
 ### 6. Parquet
 
 Parquet is a binary file containing  metadata about their content. The column metadata for a Parquet file is stored at the end of the file, which allows for fast, one-pass writing. Parquet is optimized for the write Once read many (WORM).
-It is splittable and support the shema evolution. It widely used in many environment as ruche, porc, Impala, hive; l’étincelle, SPARK, flink, athena, bigQuery,….
-Parquet is very efficient for OLAP query processing as ORC. Parquet is slower to write than other column formats. 
+It is splittable and widely used in many environment as ruche, porc, Impala, hive; l’étincelle, SPARK, flink, athena, bigQuery,….
+Parquet is very efficient for OLAP query processing as ORC. It is slower to write than other column formats. 
+Howerver, It support limited schema evolution.
+At present, Hive and Impala are able to query newly added columns, but other tools in the ecosystem such as Hadoop Pig may face challenges.
 
    ![parquet](https://user-images.githubusercontent.com/51121757/80372035-c3333980-888a-11ea-87af-97425e00c476.JPG)
 
@@ -79,7 +93,7 @@ Parquet is very efficient for OLAP query processing as ORC. Parquet is slower to
 
 An ORC file contains groups of row data called stripes, along with auxiliary information in a file footer. At the end of the file a postscript holds compression parameters and the size of the compressed footer.
 The default stripe size is 250 MB. Large stripe sizes enable large, efficient reads from HDFS.
-The ORC improves performance reading, writing, and processing in Hive (Suitable for OLAP query), lightweight file and compressible (ZLIB by default). It support also the supplementary compression via the use of LZO, Snappy. 
+The ORC improves performance reading, writing, and processing in Hive (Suitable for OLAP query), lightweight file and compressible (ZLIB by default). It support also the supplementary compression via LZO, Snappy. 
 ORC reduce the size of the original data up to 75%. ORC does not support schema evolution
 
 It can’t be load data directly into ORCFILE, increases CPU overhead by increasing the time it takes to decompress the relational data, Specific version (Hive 0.11)
@@ -87,7 +101,6 @@ It can’t be load data directly into ORCFILE, increases CPU overhead by increas
    ![ORC](https://user-images.githubusercontent.com/51121757/80372034-c29aa300-888a-11ea-9b37-0114b5a0c0c2.JPG)
 
 [Source](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+ORC) 
-  
   
 ##  Overview
 
