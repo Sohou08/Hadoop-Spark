@@ -10,10 +10,9 @@ Big data ecosystem (Hadoop, Apache) support multiples types of files formats acc
 +	Support Schema evolution, allowing us to change schema of file
 +	Support advanced compression through various available compression codecs (Bzip2, LZO, Sappy). That allow to reduce data storage space on disk; increase the performance of lecture and readable on the disc ; also improve the speed of file transfer over the network.
 
+## **Row-based file format**
 
-##  **Row-based file format**
-------
-### 1. CSV and TSV
+##  CSV and TSV
 CSV and TSV are a text Input Format. CSV represents a lines of comma separated fields with an optional header.
 TVS uses TAB as a default fiel delimiter.  
 Both are splittable and compressible. They are human-readable and easy to edit manually, processed by almost all existing applications. In terms of comparaison, parsing TSV data is more simple than csv.
@@ -21,7 +20,8 @@ They don't manage null value and generally not standart for big data.
 
    ![csv-tsv](https://user-images.githubusercontent.com/51121757/80370776-b7467800-8888-11ea-9245-d0bc60d8c115.JPG)
 
-## + Serialization format 
+
++ Serialization format 
 
 ### 2. JSON (JavaScript object notation) 
 JSON is a text Input Format and each record can be in any form (string, integer, object,nested data...). It has a schema integrated to their data. 
@@ -38,7 +38,7 @@ XML is general less usable data processing due to the lack of large-scale parall
 
    ![xml](https://user-images.githubusercontent.com/51121757/80371480-e0b3d380-8889-11ea-9ccd-ca8964b9eb22.JPG)
 
-Recently, we have many formats at our disposal more suitable in serialization, exchange data as e.g. avro and Protocol Buffers.
+There are many formats at our disposal more suitable in serialization, exchange data as e.g. avro and Protocol Buffers.
 
 ### 3. AVRO
 
@@ -46,7 +46,7 @@ AVRO stored in JSON format while the data is stored in binary format, minimizing
 His proprety about serialization and deserialization bring it a very good ingestion performance.
 AVRO has a sync marker to separate the block (splittable); typically used to write-heavy workload because rows can be added simply and quickly. 
 
-It is more used in case of streaming processing due to their ingestion speed. 
+It is more used in case of streaming processing due to their speed of ingestion. 
 
    ![e.g. AVRO file](https://user-images.githubusercontent.com/51121757/80033375-8232d200-84e4-11ea-9531-076f72e30bea.JPG)
 
@@ -69,7 +69,6 @@ Parquet is a binary file containing  metadata about their content. The column me
 It is splittable and support the shema evolution. It widely used in many environment as ruche, porc, Impala, hive; l’étincelle, SPARK, flink, athena, bigQuery,….
 Parquet is very efficient for OLAP query processing as ORC. Parquet is slower to write than other column formats. 
 
-
    ![parquet](https://user-images.githubusercontent.com/51121757/80372035-c3333980-888a-11ea-87af-97425e00c476.JPG)
 
 [Source](https://blog.ippon.fr/2020/03/02/de-limportance-du-format-de-la-donnee-pratique-partie-2-2/) 
@@ -86,10 +85,14 @@ It can’t be load data directly into ORCFILE, increases CPU overhead by increas
    ![ORC](https://user-images.githubusercontent.com/51121757/80372034-c29aa300-888a-11ea-9b37-0114b5a0c0c2.JPG)
 
 [Source](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+ORC) 
-                                                                                                                                                       
+  
++ Schema evolution 
+AVRO and protocol buffer support more schema evolution than JSON and XML.
+  
 ##  Overview
-CSV and Json are less suitable for stockage or data analysis. However Json is a standard format to share data over the network. The majority of the community big data consider parquet, ORC and avro the more optimized in this domain due to their splittability, compression support. 
-In practice, row-oriented storage layouts are well-suited for OLTP-like workloads whereas column-oriented storage layouts are well-suited for OLAP-like workloads (e.g., data warehouses) which typically involve a smaller number of highly complex queries over all data (possibly terabytes). Parquet and ORC are widely adopted options of query engine mainly of OLAP query. They are also more efficient in term of space utilization, processing data than CSV and JSON file.
+
+
+
 
 [e.g. File format comparaison](https://2s7gjr373w3x22jf92z99mgm5w-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/Nexla-File-Format.png), [e.g. Comparaison in terms of reading, space,storage, execution time,...](https://luminousmen.com/post/big-data-file-formats)
 
