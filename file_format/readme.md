@@ -19,7 +19,7 @@ TVS uses TAB as a default fiel delimiter.
 Both are splittable and compressible. They are human-readable and easy to edit manually, processed by almost all existing applications. In terms of comparaison, parsing TSV data is more simple than csv.
 They don't manage null value and generally not standart for big data.
 
-    ![csv-tsv](https://user-images.githubusercontent.com/51121757/80370776-b7467800-8888-11ea-9245-d0bc60d8c115.JPG)
+   ![csv-tsv](https://user-images.githubusercontent.com/51121757/80370776-b7467800-8888-11ea-9245-d0bc60d8c115.JPG)
 
 ## + Serialization format 
 
@@ -49,7 +49,7 @@ AVRO has a sync marker to separate the block (splittable); typically used to wri
 It is more used in case of streaming processing due to their ingestion speed. 
 
    ![e.g. AVRO file](https://user-images.githubusercontent.com/51121757/80033375-8232d200-84e4-11ea-9531-076f72e30bea.JPG)
-    [Source](https://blog.clairvoyantsoft.com/big-data-file-formats-3fb659903271)
+[Source](https://blog.clairvoyantsoft.com/big-data-file-formats-3fb659903271)
     
 ### 3. Protocol Buffer
 Protocol buffer is language-neutral, an extensible way of serializing structured data for use in communications protocols, data storage, and more. You can easily read it and understand it as a human. The data is fully  type and compressed automatically. The schema is needed to generate code and read the data. The documentation can be embedded in the schema. As many format, the data can be read across any language. 
@@ -57,7 +57,7 @@ Like AVRO, protocol buffer support the schema evolution.
 However, it is not splittable and does't support MapReduce.
 
    ![protocole buffer2](https://user-images.githubusercontent.com/51121757/80370785-bb729580-8888-11ea-8669-c26170bc9f5f.JPG)
-       [Source](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/)  
+[Source](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/)  
 
 ## **Column-based file format**
 
@@ -69,7 +69,7 @@ Parquet is very efficient for OLAP query processing as ORC. Parquet is slower to
 
 
    ![parquet](https://user-images.githubusercontent.com/51121757/80372035-c3333980-888a-11ea-87af-97425e00c476.JPG)
-     [Source](https://blog.ippon.fr/2020/03/02/de-limportance-du-format-de-la-donnee-pratique-partie-2-2/) 
+[Source](https://blog.ippon.fr/2020/03/02/de-limportance-du-format-de-la-donnee-pratique-partie-2-2/) 
 
 ### 5. ORC
 
@@ -81,7 +81,7 @@ ORC reduce the size of the original data up to 75%. ORC does not support schema 
 It can’t be load data directly into ORCFILE, increases CPU overhead by increasing the time it takes to decompress the relational data, Specific version (Hive 0.11)
 
    ![ORC](https://user-images.githubusercontent.com/51121757/80372034-c29aa300-888a-11ea-9b37-0114b5a0c0c2.JPG)
-     [Source](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+ORC) 
+[Source](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+ORC) 
                                                                                                                                                        
 ##  Overview
 CSV and Json are less suitable for stockage or data analysis. However Json is a standard format to share data over the network. The majority of the community big data consider parquet, ORC and avro the more optimized in this domain due to their splittability, compression support. 
