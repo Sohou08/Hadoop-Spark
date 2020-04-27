@@ -28,13 +28,15 @@ JSON is a text Input Format and each record can be in any form (string, integer,
 JSON is compared to XML due to the fact it can store data in hierarchical format. Both are user-readable but JSON is much smaller than XML. There are commonly used in network communication. It attach metadata into their data in each record. It's not splittable due to the fact it does't contain a special character where we can based to subdivise the text e.g "\n" quote. 
 Json is widely used file format for NoSQL databases such as MongoDB, Couchbase, Azure Cosmos DB,...
 
-    ![Json versus xml](https://user-images.githubusercontent.com/51121757/80371280-8fa3df80-8889-11ea-867d-2ab16f31fb71.JPG)
+   ![Json versus xml](https://user-images.githubusercontent.com/51121757/80371280-8fa3df80-8889-11ea-867d-2ab16f31fb71.JPG)
 
 ### 2. XML 
 XML is a input text format. It is not splittable since XML has an opening tag at the beginning and a closing tag at the end. You cannot start processing at any point in the middle of those tags.
 As Json,  It is generally used to serialize, encapsulate, and exchange data. 
 XML syntax is verbose, especially for human readers, relative to other alternatives ‘text-based’ data transmission formats. The distinction between content and attributes in XML seems unnatural to some and makes designing XML data structures harder.
 XML is general less usable data processing due to the lack of large-scale parallelization of processing (no splittable)
+
+   ![xml](https://user-images.githubusercontent.com/51121757/80371480-e0b3d380-8889-11ea-9ccd-ca8964b9eb22.JPG)
 
 Recently, we have many formats at our disposal more suitable in serialization, exchange data as e.g. avro and Protocol Buffers.
 
@@ -46,7 +48,7 @@ AVRO has a sync marker to separate the block (splittable); typically used to wri
 
 It is more used in case of streaming processing due to their ingestion speed. 
 
-![e.g. AVRO file](https://user-images.githubusercontent.com/51121757/80033375-8232d200-84e4-11ea-9531-076f72e30bea.JPG)
+   ![e.g. AVRO file](https://user-images.githubusercontent.com/51121757/80033375-8232d200-84e4-11ea-9531-076f72e30bea.JPG)
     [Source](https://blog.clairvoyantsoft.com/big-data-file-formats-3fb659903271)
     
 ### 3. Protocol Buffer
@@ -54,7 +56,7 @@ Protocol buffer is language-neutral, an extensible way of serializing structured
 Like AVRO, protocol buffer support the schema evolution.
 However, it is not splittable and does't support MapReduce.
 
-![protocole buffer2](https://user-images.githubusercontent.com/51121757/80370785-bb729580-8888-11ea-8669-c26170bc9f5f.JPG)
+   ![protocole buffer2](https://user-images.githubusercontent.com/51121757/80370785-bb729580-8888-11ea-8669-c26170bc9f5f.JPG)
        [Source](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/)  
 
 ## **Column-based file format**
@@ -66,7 +68,7 @@ It is splittable and support the shema evolution. It widely used in many environ
 Parquet is very efficient for OLAP query processing as ORC. Parquet is slower to write than other column formats. 
 
 
-![parquet](https://user-images.githubusercontent.com/51121757/80370784-ba416880-8888-11ea-87d3-ff5e271b8a58.JPG)
+   ![parquet](https://user-images.githubusercontent.com/51121757/80370784-ba416880-8888-11ea-87d3-ff5e271b8a58.JPG)
      [Source](https://blog.ippon.fr/2020/03/02/de-limportance-du-format-de-la-donnee-pratique-partie-2-2/) 
 
 ### 5. ORC
