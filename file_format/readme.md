@@ -19,7 +19,7 @@ TVS uses TAB as a default fiel delimiter.
 Both are splittable and compressible. They are human-readable and easy to edit manually, processed by almost all existing applications. In terms of comparaison, parsing TSV data is more simple than csv.
 They don't manage null value and generally not standart for big data.
 
-![csv-tsv](https://user-images.githubusercontent.com/51121757/80370776-b7467800-8888-11ea-9245-d0bc60d8c115.JPG)
+    ![csv-tsv](https://user-images.githubusercontent.com/51121757/80370776-b7467800-8888-11ea-9245-d0bc60d8c115.JPG)
 
 ## + Serialization format 
 
@@ -28,7 +28,7 @@ JSON is a text Input Format and each record can be in any form (string, integer,
 JSON is compared to XML due to the fact it can store data in hierarchical format. Both are user-readable but JSON is much smaller than XML. There are commonly used in network communication. It attach metadata into their data in each record. It's not splittable due to the fact it does't contain a special character where we can based to subdivise the text e.g "\n" quote. 
 Json is widely used file format for NoSQL databases such as MongoDB, Couchbase, Azure Cosmos DB,...
 
-![e.g. Json versus xml](https://user-images.githubusercontent.com/51121757/80033313-662f3080-84e4-11ea-8e18-35addbcee12a.JPG)
+    ![Json versus xml](https://user-images.githubusercontent.com/51121757/80371280-8fa3df80-8889-11ea-867d-2ab16f31fb71.JPG)
 
 ### 2. XML 
 XML is a input text format. It is not splittable since XML has an opening tag at the beginning and a closing tag at the end. You cannot start processing at any point in the middle of those tags.
