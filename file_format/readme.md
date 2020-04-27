@@ -3,27 +3,29 @@
 
 Big data ecosystem (Hadoop, Apache) support multiples types of files formats according of the analysis purpose . Thus, the goal of this report is to understand what are the most suitable to:
 
-+	Row-based storage and column-based storage
+#### +	Row-based storage and column-based storage
 
 The choice of a big data format need to known whether a row or column-based format is best suited to your objectives. At the highest level, column-based storage is most useful when performing analytics queries that require only a subset of columns examined over very large data sets. If your queries require access to all or most of the columns of each row of data, row-based storage will be better suited to your needs. 
 Row stores have the ability to write data very quickly, whereas a column store is awesome at aggregating large volumes of data for a subset of columns.
 
-+	Perform OLAP or OLTP query 
+#### +	Perform OLAP or OLTP query 
 
 OLTP is an online Transaction Processing system. The main focus of OLTP system is to record the current Update, Insertion and Deletion while transaction. OLAP is online Analytical Processing system. OLAP's main operation is to extract multidimensional data for analysis. 
 
-+	Be splittable i.e. multiple task can run parallel on parts of file
+#### +	Be splittable i.e. multiple task can run parallel on parts of file
 
 Hadoop stores and processes data in blocks you must be able to begin reading data at any point within a file in order to take fullest advantage of Hadoop’s distributed processing. Thereupon, splittable files is suitable so that its massively distributed engine can leverage data locality and parallel processing. 
 
-+   Support advanced compression through various available compression codecs (Bzip2, LZO, Sappy). That allow to reduce data storage space on disk; increase the performance of lecture and readable on the disc ; also improve the speed of file transfer over the network. For more information about compression.
+#### +   Support advanced compression through various available compression codecs (Bzip2, LZO, Sappy).
 
-+  Streaming and Batch 
+That allow to reduce data storage space on disk; increase the performance of lecture and readable on the disc ; also improve the speed of file transfer over the network. For more information about compression.
+
+#### +  Streaming and Batch 
 
 Batch processing is where the processing happens of blocks of data that have already been stored over a period of time. For example, processing all the transaction that have been performed by a major financial firm in a week. 
 Stream processing allows to process data in real time as they arrive and quickly detect conditions within small time period from the point of receiving the data (e.g. tasks od stream processing is fraud detection).
 
-+	Support Schema evolution, allowing us to change schema of file
+#### +	Support Schema evolution, allowing us to change schema of file
 
 The schema will store the definition of each attribute and its type. Unless your data is guaranteed to never change, you’ll need to think about schema evolution in order to figure out if your data schema changes over time, does it possible to manage fields as added, deleted or renamed.
 
