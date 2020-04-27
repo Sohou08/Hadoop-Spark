@@ -11,9 +11,9 @@ Big data ecosystem (Hadoop, Apache) support multiples types of files formats acc
 +	Support advanced compression through various available compression codecs (Bzip2, LZO, Sappy). That allow to reduce data storage space on disk; increase the performance of lecture and readable on the disc ; also improve the speed of file transfer over the network.
 
 
-## **Row-based file format**
+## 1. **Row-based file format**
 ------
-### 1. CSV and TSV
+### 2. CSV and TSV
 CSV and TSV are a text Input Format. CSV represents a lines of comma separated fields with an optional header.
 TVS uses TAB as a default fiel delimiter.  
 Both are splittable and compressible. They are human-readable and easy to edit manually, processed by almost all existing applications. In terms of comparaison, parsing TSV data is more simple than csv.
@@ -21,7 +21,7 @@ They don't manage null value and generally not standart for big data
 
 [e.g. Csv file](https://user-images.githubusercontent.com/51121757/80033301-616a7c80-84e4-11ea-80e4-b03bffc27669.JPG)
 
-## + Serialization format 
++ Serialization format 
 
 ### 2. JSON (JavaScript object notation) 
 JSON is a text Input Format and can contain any form of data (string, integer, object,nested data...). JSON is compared to XML due to the fact it can store data in hierarchical format. Both are user-readable but JSON is much smaller than XML. There are commonly used in network communication. It attach metadata into their data in each record. It's not splittable due to the fact it does't contain a special character where we can based to subdivise the text e.g "\n" quote. 
