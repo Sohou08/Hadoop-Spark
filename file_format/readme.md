@@ -21,6 +21,7 @@ They don't manage null value and generally not standart for big data
 
 [e.g. Csv file](https://user-images.githubusercontent.com/51121757/80033301-616a7c80-84e4-11ea-80e4-b03bffc27669.JPG)
 
+## + Serialization format 
 
 ### 2. JSON (JavaScript object notation) 
 JSON is a text Input Format and can contain any form of data (string, integer, object,nested data...). JSON is compared to XML due to the fact it can store data in hierarchical format. Both are user-readable but JSON is much smaller than XML. There are commonly used in network communication. It attach metadata into their data in each record. It's not splittable due to the fact it does't contain a special character where we can based to subdivise the text e.g "\n" quote. 
