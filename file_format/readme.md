@@ -91,7 +91,7 @@ It can’t be load data directly into ORCFILE, increases CPU overhead by increas
 [Comparison table 2](https://user-images.githubusercontent.com/51121757/80376702-1f4d8c00-8892-11ea-8ca6-187df3e3b3d9.JPG)
 
 
-[e.g. File format comparison](https://2s7gjr373w3x22jf92z99mgm5w-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/Nexla-File-Format.png), [e.g. Comparaison in terms of reading, space,storage, execution time,...](https://luminousmen.com/post/big-data-file-formats)
+[e.g. File format comparison](https://2s7gjr373w3x22jf92z99mgm5w-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/Nexla-File-Format.png), [e.g. Comparison in terms of reading, space,storage, execution time,...](https://luminousmen.com/post/big-data-file-formats)
 
 
 [Let's test all these differences practically](https://github.com/Sohou08/Hadoop-Spark/tree/master/file_format/pratice_test)...
