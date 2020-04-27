@@ -20,6 +20,9 @@ Hadoop stores and processes data in blocks you must be able to begin reading dat
 
 +  Streaming and Batch 
 
+Batch processing is where the processing happens of blocks of data that have already been stored over a period of time. For example, processing all the transaction that have been performed by a major financial firm in a week. 
+Stream processing allows to process data in real time as they arrive and quickly detect conditions within small time period from the point of receiving the data (e.g. tasks od stream processing is fraud detection).
+
 +	Support Schema evolution, allowing us to change schema of file
 
 The schema will store the definition of each attribute and its type. Unless your data is guaranteed to never change, you’ll need to think about schema evolution in order to figure out if your data schema changes over time, does it possible to manage fields as added, deleted or renamed.
