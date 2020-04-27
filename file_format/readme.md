@@ -19,7 +19,7 @@ TVS uses TAB as a default fiel delimiter.
 Both are splittable and compressible. They are human-readable and easy to edit manually, processed by almost all existing applications. In terms of comparaison, parsing TSV data is more simple than csv.
 They don't manage null value and generally not standart for big data.
 
-[e.g. Csv file](https://user-images.githubusercontent.com/51121757/80033301-616a7c80-84e4-11ea-80e4-b03bffc27669.JPG)
+![csv-tsv](https://user-images.githubusercontent.com/51121757/80370776-b7467800-8888-11ea-9245-d0bc60d8c115.JPG)
 
 ## + Serialization format 
 
@@ -28,7 +28,7 @@ JSON is a text Input Format and each record can be in any form (string, integer,
 JSON is compared to XML due to the fact it can store data in hierarchical format. Both are user-readable but JSON is much smaller than XML. There are commonly used in network communication. It attach metadata into their data in each record. It's not splittable due to the fact it does't contain a special character where we can based to subdivise the text e.g "\n" quote. 
 Json is widely used file format for NoSQL databases such as MongoDB, Couchbase, Azure Cosmos DB,...
 
-[e.g. Json versus xml](https://user-images.githubusercontent.com/51121757/80033313-662f3080-84e4-11ea-8e18-35addbcee12a.JPG)
+![e.g. Json versus xml](https://user-images.githubusercontent.com/51121757/80033313-662f3080-84e4-11ea-8e18-35addbcee12a.JPG)
 
 ### 2. XML 
 XML is a input text format. It is not splittable since XML has an opening tag at the beginning and a closing tag at the end. You cannot start processing at any point in the middle of those tags.
@@ -46,7 +46,7 @@ AVRO has a sync marker to separate the block (splittable); typically used to wri
 
 It is more used in case of streaming processing due to their ingestion speed. 
 
-[e.g. AVRO file](https://user-images.githubusercontent.com/51121757/80033375-8232d200-84e4-11ea-9531-076f72e30bea.JPG):
+![e.g. AVRO file](https://user-images.githubusercontent.com/51121757/80033375-8232d200-84e4-11ea-9531-076f72e30bea.JPG)
     [Source](https://blog.clairvoyantsoft.com/big-data-file-formats-3fb659903271)
     
 ### 3. Protocol Buffer
@@ -54,7 +54,7 @@ Protocol buffer is language-neutral, an extensible way of serializing structured
 Like AVRO, protocol buffer support the schema evolution.
 However, it is not splittable and does't support MapReduce.
 
-[e.g. Protocole buffer](https://user-images.githubusercontent.com/51121757/80033392-8828b300-84e4-11ea-84df-01326a4b56ac.JPG):
+![protocole buffer2](https://user-images.githubusercontent.com/51121757/80370785-bb729580-8888-11ea-8669-c26170bc9f5f.JPG)
        [Source](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/)  
 
 ## **Column-based file format**
@@ -66,8 +66,8 @@ It is splittable and support the shema evolution. It widely used in many environ
 Parquet is very efficient for OLAP query processing as ORC. Parquet is slower to write than other column formats. 
 
 
-[e.g. Parquet file](https://user-images.githubusercontent.com/51121757/80033382-852dc280-84e4-11ea-8fbb-f29ef9d06ff1.JPG):
-     [Source](https://netjs.blogspot.com/2018/07/parquet-file-format-in-hadoop.html) 
+![parquet](https://user-images.githubusercontent.com/51121757/80370784-ba416880-8888-11ea-87d3-ff5e271b8a58.JPG)
+     [Source](https://blog.ippon.fr/2020/03/02/de-limportance-du-format-de-la-donnee-pratique-partie-2-2/) 
 
 ### 5. ORC
 
@@ -78,7 +78,7 @@ ORC reduce the size of the original data up to 75%. ORC does not support schema 
 
 It can’t be load data directly into ORCFILE, increases CPU overhead by increasing the time it takes to decompress the relational data, Specific version (Hive 0.11)
 
-[e.g. ORC file](https://user-images.githubusercontent.com/51121757/80036471-b066e080-84e9-11ea-9525-2a1a4c26104d.JPG):
+![e.g. ORC file](https://user-images.githubusercontent.com/51121757/80036471-b066e080-84e9-11ea-9525-2a1a4c26104d.JPG)
      [Source](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+ORC) 
                                                                                                                                                        
 ##  Overview
@@ -91,8 +91,6 @@ In practice, row-oriented storage layouts are well-suited for OLTP-like workload
 [Let's test all these differences practically](https://github.com/Sohou08/Hadoop-Spark/tree/master/file_format/pratice_test)...
 
                                                                                                                     
-
-
 
 
 
