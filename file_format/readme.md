@@ -119,8 +119,9 @@ It can’t be load data directly into ORCFILE, increases CPU overhead by increas
 
 [Let's test all these differences practically](https://github.com/Sohou08/Hadoop-Spark/tree/master/file_format/pratice_test)...
 
+## __Conclusion__
 
-
+In general, the majority of file format are row-based storage (CSV,TSV,JSON,XML and AVRO).
 
 
 
