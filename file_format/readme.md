@@ -18,7 +18,7 @@ Hadoop stores and processes data in blocks you must be able to begin reading dat
 
 +   __Support advanced compression through various available compression codecs (Bzip2, LZO, Sappy,...)__.
 
-That allow to reduce data storage space on disk; increase the performance of lecture and readable on the disc ; also improve the speed of file transfer over the network. For more information about compression.
+That allow to reduce data storage space on disk; increase the performance of lecture and readable on the disc ; also improve the speed of file transfer over the network. [For more information about compression](https://github.com/Sohou08/Hadoop-Spark/tree/master/file_format/compression)
 
 +  __Streaming and Batch__
 
