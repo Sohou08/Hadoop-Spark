@@ -16,7 +16,7 @@ OLTP is an online Transaction Processing system. The main focus of OLTP system i
 
 Hadoop stores and processes data in blocks you must be able to begin reading data at any point within a file in order to take fullest advantage of Hadoop’s distributed processing. Thereupon, splittable files is suitable so that its massively distributed engine can leverage data locality and parallel processing. 
 
-+   __Support advanced compression through various available compression codecs (Bzip2, LZO, Sappy)__.
++   __Support advanced compression through various available compression codecs (Bzip2, LZO, Sappy,...)__.
 
 That allow to reduce data storage space on disk; increase the performance of lecture and readable on the disc ; also improve the speed of file transfer over the network. For more information about compression.
 
