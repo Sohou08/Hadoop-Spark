@@ -109,7 +109,7 @@ It can’t be load data directly into ORCFILE, increases CPU overhead by increas
   
 ##  Overview
 
-[Comparison table 1](https://user-images.githubusercontent.com/51121757/80376695-1d83c880-8892-11ea-9614-e460aabe7dd3.JPG)
+[Comparison table 1](https://user-images.githubusercontent.com/51121757/80579196-850c5600-8a01-11ea-9e53-5a73acaf9462.JPG)
 
 [Comparison table 2](https://user-images.githubusercontent.com/51121757/80578595-9c970f00-8a00-11ea-96fe-fb4c7468ad78.JPG)
 
