@@ -85,6 +85,7 @@ However, it is not splittable , not compressible and does't support MapReduce.
 ### 6. Parquet
 
 Parquet is a binary file containing  metadata about their content. The column metadata for a Parquet file is stored at the end of the file, which allows for fast, one-pass writing. Parquet is optimized for the write Once read many (WORM).
+
 It is splittable and widely used in many environment as ruche, porc, Impala, hive; l’étincelle, SPARK, flink, athena, bigQuery,….
 Parquet is very efficient for OLAP query processing as ORC. It is slower to write than other column formats. 
 Howerver, It support limited schema evolution.
