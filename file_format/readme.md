@@ -52,8 +52,8 @@ It is widely used file format for NoSQL databases such as MongoDB, Couchbase, Az
 ### 3. XML 
 XML is a input text format. It is not splittable since XML has an opening tag at the beginning and a closing tag at the end. You cannot start processing at any point in the middle of those tags.
 As Json,  It is generally used to serialize, encapsulate, and exchange data. 
-XML syntax is verbose, especially for human readers, relative to other alternatives ‘text-based’ data transmission formats. The distinction between content and attributes in XML seems unnatural to some and makes designing XML data structures harder.
-XML is general less usable on data processing due to the lack of large-scale parallelization of processing (no splittable)
+XML syntax is verbose, especially for human readers, relative to other alternatives ‘text-based’ formats. Document size is often bulky and with big files, the tag structure makes it huge and complex to read which occurs slow process in parsing, leading also to slower data transmission.
+XML is general less usable on data processing mainly due to his disability of large-scale parallelization of processing (no splittable)
 
    ![xml](https://user-images.githubusercontent.com/51121757/80371480-e0b3d380-8889-11ea-9ccd-ca8964b9eb22.JPG)
 
@@ -106,6 +106,13 @@ It can’t be load data directly into ORCFILE, increases CPU overhead by increas
    ![ORC](https://user-images.githubusercontent.com/51121757/80372034-c29aa300-888a-11ea-9b37-0114b5a0c0c2.JPG)
 
 [Source](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+ORC) 
+
+## __Conclusion__
+
+In general, The reading or writting fast according to the type of storage is very related to the kind of query tied to the proprety of the file format. Usually, column-based storage lets you ignore all the data that doesn’t apply to a particular query, because you can retrieve the information from just the columns you want. By contrast, if you were working with a row-oriented storage and you wanted to know, the average population density in cities with more than a million people, your query would access each record in the table (meaning all of its fields) to get the information from the two columns whose data you needed, which would involve a lot of unnecessary disk seeks – and disk reads, which also impact performance. 
+
+
+
   
 ##  Overview
 
@@ -119,6 +126,3 @@ It can’t be load data directly into ORCFILE, increases CPU overhead by increas
 
 [Let's test all these differences practically](https://github.com/Sohou08/Hadoop-Spark/tree/master/file_format/pratice_test)...
 
-## __Conclusion__
-
-In general, The reading or writting fast according to the type of storage is related to the kind of query. Usually 
