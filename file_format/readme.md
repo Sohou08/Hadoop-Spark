@@ -118,15 +118,9 @@ Even all file formats could be used for each type of query, the row-based storag
 
 In term of comparison, JSON, XML are less used in data processing regarding to their indivisible. Most of case , they are used to exchange data over network and serialization and well known to support schema evolution as AVRO. This one is considered actually the leader format in case of streaming processing due to fact his ability to support. In addition, it is splittable and compressible which occurs it simultaneously the file format appropriate in big data ecosystem. That what protocol buffer lack about splittable, compressible. However, being a language fully typed as JSON , it bring better performance for compiler optimization.
 
-The last two formats (ORC and parquet) are optimized the cost storage by avoiding the data to be repeated. They are used in different ecosystem but strongly in hive.
+The last two formats (ORC and parquet) are optimized the cost storage by avoiding repeated data. They are used in different ecosystem but strongly in hive.
 
-In general, all these differences are not statics. It's can evolve and differ according to the use cases. Some of them could be fit in order to respond specific goal. 
-
-
-
-
-
-
+In general, all these differences are not statics. It's can evolve and differ according to the use cases. Some of them could be fit in order to respond a specific purpose.
   
 ##  Overview
 
