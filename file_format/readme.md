@@ -42,7 +42,7 @@ They don't manage null value and generally not standart for big data.
    ![csv-tsv](https://user-images.githubusercontent.com/51121757/80370776-b7467800-8888-11ea-9245-d0bc60d8c115.JPG)
 
 ### 2. JSON (JavaScript object notation) 
-JSON is a text Input Format containing record which might be in any form (string, integer, object,nested data...). It support serialization and deserialization process. 
+JSON is a text Input Format containing record which might be in any form (string, integer, booleans, object, nested data...). It support serialization and deserialization process. 
 JSON is compared to XML due to the fact it can store data in hierarchical format. Both are user-readable but JSON is much smaller than XML. There are commonly used in network communication.
 They stores metadata with the data, fully enabling schema evolution. However, JSON is not splittable due to the fact it does't contain a special character where we can based to subdivise the text e.g "\n" quote. 
 It is widely used file format for NoSQL databases such as MongoDB, Couchbase, Azure Cosmos DB,...
@@ -121,4 +121,4 @@ It can’t be load data directly into ORCFILE, increases CPU overhead by increas
 
 ## __Conclusion__
 
-In general, the majority of file format are row-based storage (CSV,TSV,JSON,XML and AVRO).
+In general, The reading or writting fast according to the type of storage is related to the kind of query. Usually 
