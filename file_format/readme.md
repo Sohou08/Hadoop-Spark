@@ -29,15 +29,15 @@ Stream processing allows to process data in real time as they arrive and quickly
 
 The schema will store the definition of each attribute and its type. Unless your data is guaranteed to never change, you’ll need to think about schema evolution in order to figure out if your data schema changes over time, does it possible to manage fields as added, deleted or renamed.
 
-Let's describe briefly each file formats and their charactistics 
+Let's describe briefly each file formats and their characteristics 
 
 ## **Row-based file format**
 
 ### 1. CSV and TSV
 CSV and TSV are a text Input Format. CSV represents a lines of comma separated fields with an optional header.
-TVS uses TAB as a default fiel delimiter.  
-Both are splittable and compressible. They are human-readable and easy to edit manually, processed by almost all existing applications. In terms of comparaison, parsing TSV data is more simple than csv.
-They don't manage null value and generally not standart for big data.
+TVS uses TAB as a default field delimiter.  
+Both are splittable and compressible. They are human-readable and easy to edit manually, processed by almost all existing applications. In terms of comparison, parsing TSV data is more simple than csv.
+They don't manage null value and generally not standard for big data.
 
    ![csv-tsv](https://user-images.githubusercontent.com/51121757/80370776-b7467800-8888-11ea-9245-d0bc60d8c115.JPG)
 
@@ -74,7 +74,7 @@ It is more used in case of streaming processing due to their speed of ingestion.
 ### 5. Protocol Buffer
 Protocol buffer is language-neutral, an extensible way of serializing structured data for use in communications protocols, data storage, and more. You can easily read it and understand it as an human. The data is fully  type . The schema is needed to generate code and read the data. The documentation can be embedded in the schema. As many format, the data can be read across any language. 
 Like AVRO, protocol buffer support the schema evolution.
-However, it is not splittable , not compressible and does't support MapReduce.
+However, it is not splittable , not compressible and doesn't support MapReduce.
 
    ![protocole buffer2](https://user-images.githubusercontent.com/51121757/80370785-bb729580-8888-11ea-8669-c26170bc9f5f.JPG)
 
@@ -86,7 +86,7 @@ However, it is not splittable , not compressible and does't support MapReduce.
 
 Parquet is a binary file containing  metadata about their content. The column metadata for a Parquet file is stored at the end of the file, which allows for fast, one-pass writing. Parquet is optimized for the write Once read many (WORM).
 
-It is splittable and widely used in many environment as ruche, porc, Impala, hive; l’étincelle, SPARK, flink, athena, bigQuery,….
+It is splittable and widely used in many environment as ruche, porc, Impala, hive; SPARK, flink, athena, bigQuery,….
 Parquet is very efficient for OLAP query processing as ORC. It is slower to write than other column formats. 
 Howerver, It support limited schema evolution.
 At present, Hive and Impala are able to query newly added columns, but other tools in the ecosystem such as Hadoop Pig may face challenges.
@@ -110,7 +110,7 @@ It can’t be load data directly into ORCFILE, increases CPU overhead by increas
 
 ## __Conclusion__
 
-In general, The reading or writting fast according to the type of storage is very related to the kind of query tied to the proprety of the file format. Usually, column-based storage lets you ignore all the data that doesn’t apply to a particular query, because you can retrieve the information from just the columns you want. By contrast, if you were working with a row-oriented storage and you wanted to know, the average population density in cities with more than a million people, your query would access each record in the table (meaning all of its fields) to get the information from the two columns whose data you needed, which would involve a lot of unnecessary disk seeks – and disk reads, which also impact performance. 
+In general, The reading or writing fast according to the type of storage is very related to the kind of query tied to the property of the file format. Usually, column-based storage lets you ignore all the data that doesn’t apply to a particular query, because you can retrieve the information from just the columns you want. By contrast, if you were working with a row-oriented storage and you wanted to know, the average population density in cities with more than a million people, your query would access each record in the table (meaning all of its fields) to get the information from the two columns whose data you needed, which would involve a lot of unnecessary disk seeks – and disk reads, which also impact performance. 
 
 
 
@@ -126,4 +126,3 @@ In general, The reading or writting fast according to the type of storage is ver
 
 
 [Let's test all these differences practically](https://github.com/Sohou08/Hadoop-Spark/tree/master/file_format/pratice_test)...
-
