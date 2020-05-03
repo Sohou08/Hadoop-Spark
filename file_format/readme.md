@@ -5,7 +5,8 @@ Big data ecosystem (Hadoop, Apache) support multiples types of files formats acc
 
 +	__Row-based storage and column-based storage__
 
-The choice of a big data format need to known whether a row or column-based format is best suited to your objectives. At the highest level, column-based storage is most useful when performing analytics queries that require only a subset of columns examined over very large data sets. If your queries require access to all or most of the columns of each row of data, row-based storage will be better suited to your needs. Mostly,row stores are considered to write data very quickly, whereas a column store is awesome at aggregating large volumes of data for a subset of columns, obviously which depend of the use case.
+The choice of a big data format need to known whether a row or column-based format is best suited to your objectives. Column-based storage (ORC, Parquet) is most useful when performing analytics queries that require only a subset of columns examined over very large data sets. If your queries require access to all or most of the columns of each row of data, row-based storage (CSV,JSON, AVRO,...) will be better suited to your needs. 
+
 
 +	__Perform OLAP or OLTP query__ 
 
@@ -13,23 +14,23 @@ OLTP is an online Transaction Processing system. The main focus of OLTP system i
 
 +	__Be splittable i.e. multiple task can run parallel on parts of file__
 
-Hadoop stores and processes data in blocks, you must be able to begin reading data at any point within a file in order to take fullest advantage of Hadoop’s distributed processing. Thereupon, splittable files is suitable so that its massively distributed engine can leverage data locality and parallel processing. 
+Hadoop stores and processes data in blocks. So, be able to begin reading data at any point within a file is helpful in order to take fullest advantage of Hadoop’s distributed processing. Thereupon, splittable files is suitable so that its massively distributed engine can leverage data locality and parallel processing. That the case of JSON and XML which doesn't take advantage of that because they are not splittable.
 
 +   __Support advanced compression through various compression codecs (Bzip2, LZO, Sappy,...)__.
 
-Data compression is useful approach for storing the large volume of structured data in every application of information technology.
+Data compression is useful approach for storing the large volume of structured data in many applications.
 It allows to reduce data storage space on disk; increase the performance of lecture and readable on the disc ; also improve the speed of file transfer over the network. There are many kind of compression algorithm which differ according of the ratio of compression, speed, performance, splittable,... [For more information about compression](https://github.com/Sohou08/Hadoop-Spark/tree/master/file_format/compression)
 
 +  __Streaming and Batch__
 
 Batch processing is where the processing happens of blocks of data that have already been stored over a period of time. For example, processing all the transaction that have been performed by a major financial firm in a week. 
-Stream processing allows to process data in real time as they arrive and quickly detect conditions within small time period from the point of receiving the data (e.g.fraud detection).
+Stream processing allows to process data in real time as they arrive and quickly detect conditions within small time period from the point of receiving the data (e.g.fraud detection). In the second case, AVRO is considered the best format about that explained by his highly schema evolution. 
 
 +	__Support Schema evolution, allowing us to change schema of file__
 
-The schema will store the definition of each attribute and its type. Unless your data is guaranteed to never change, you’ll need to think about schema evolution in order to figure out if your data schema changes over time, does it possible to manage fields as added, deleted or renamed.
+The schema will store the definition of each attribute and its type. Unless your data is guaranteed to never change, you’ll need to think about schema evolution in order to figure out if your data schema changes over time, does it possible to manage fields as added, deleted or renamed. Apart from AVRO, there are other file formats which support this property as protocol buffer, JSON, parquet,...
 
-According of those property, let's describe briefly each file formats and their characteristics.
+According of those property , let's describe briefly each file formats and their characteristics.
 
 ## **Row-based file format**
 
@@ -44,7 +45,7 @@ They don't manage null value and generally not standard for big data.
 
 ### 2. JSON (JavaScript object notation) 
 
-JSON is a text Input Format containing record which might be in any form (string, integer, booleans, object, nested data...). It support serialization and deserialization process. 
+JSON is a text Input Format containing record which might be in any form (string, integer, booleans, object, key-value, nested data...). It support serialization and deserialization process. 
 JSON is compared to XML due to the fact it can store data in hierarchical format. Both are user-readable but JSON is much smaller than XML. There are commonly used in network communication.
 They stores metadata with the data, fully enabling schema evolution. However, JSON is not splittable due to the fact it does't contain a special character where we can based to subdivise the text e.g "\n" quote. 
 It is widely used file format for NoSQL databases such as MongoDB, Couchbase, Azure Cosmos DB,...
@@ -64,7 +65,7 @@ There are other formats at our disposal more suitable in serialization, exchange
 
 ### 4. AVRO
 
-AVRO stored in JSON format while the data is stored in binary format, minimizing file size and maximizing efficiency and to be compacted easily. It attach metadata into their data in each record and it is compressible and splittable. AVRO has an enough capacity to manage the schema evolution (at different time and independently). 
+AVRO stored his schema in JSON format while the data is stored in binary format, minimizing file size and maximizing efficiency and to be compacted easily. It attach metadata into their data in each record and it is compressible and splittable. AVRO has an enough capacity to manage the schema evolution (at different time and independently). 
 His proprety about serialization and deserialization bring it a very good ingestion performance. It is more used in case of streaming processing due to their speed of ingestion. 
 
 AVRO has a sync marker to separate the block (splittable); typically used to write-heavy workload because rows can be added simply and quickly. 
@@ -90,8 +91,7 @@ However, it is not splittable , not compressible and doesn't support MapReduce.
 Parquet is a binary file containing  metadata about their content. The column metadata for a Parquet file is stored at the end of the file, which allows for fast, one-pass writing. Parquet is optimized for the write Once read many (WORM) and supports schema evolution.
 
 It is splittable and widely used in many environment as ruche, porc, Impala, hive; SPARK, flink, athena, bigQuery,….
-Parquet is very efficient for OLAP query processing as ORC. It is slower to write than other column formats. 
-At present, Hive and Impala are able to query newly added columns, but other tools in the ecosystem such as Hadoop Pig may face challenges.
+Parquet is very efficient for OLAP query processing as ORC. At present, Hive and Impala are able to query newly added columns, but other tools in the ecosystem such as Hadoop Pig may face challenges.
 
    ![parquet](https://user-images.githubusercontent.com/51121757/80372035-c3333980-888a-11ea-87af-97425e00c476.JPG)
 
@@ -99,7 +99,7 @@ At present, Hive and Impala are able to query newly added columns, but other too
 
 ### 7. ORC
 
-An ORC file contains groups of row data called stripes, along with auxiliary information in a file footer. At the end of the file a postscript holds compression parameters and the size of the compressed footer.
+ORC file contains groups of row data called stripes, along with auxiliary information in a file footer. At the end of the file a postscript holds compression parameters and the size of the compressed footer.
 The default stripe size is 250 MB. Large stripe sizes enable large, efficient reads from HDFS.
 The ORC improves performance reading, writing, and processing in Hive (Suitable for OLAP query), lightweight file and compressible (ZLIB by default). It support also the supplementary compression via LZO, Snappy as well other type. 
 ORC reduce the size of the original data up to 75%. ORC does not support schema evolution
@@ -112,13 +112,13 @@ It can’t be load data directly into ORCFILE, increases CPU overhead by increas
 
 ## __Conclusion__
 
-In general,reading or writing fast according to the type of storage is very related to the kind of query tied to the property of each file format. Usually, column-based storage lets you ignore all the data that doesn’t apply to a particular query, because you can retrieve the information from just the columns you want. By contrast, if you were working with a row-oriented storage and you wanted to know, the average population density in cities with more than a million people, your query would access each record in the table (meaning all of its fields) to get the information from the two columns whose data you needed.That would involve a lot of unnecessary disk seeks and disk reads, which also impact performance. 
+In general, reading or writing fast according to the type of storage is very related to the kind of query tied to the property of each file format. Usually, column-based storage lets you ignore all the data that doesn’t apply to a particular query, because you can retrieve the information from just the columns you want. By contrast, if you were working with a row-oriented storage and you wanted to know, the average population density in cities with more than a million people, your query would access each record in the table (meaning all of its fields) to get the information from the two columns whose data you needed.That would involve a lot of unnecessary disk seeks and disk reads, which also impact performance. 
 
 Even all file formats could be used for each type of query, the row-based storage will be more adapted to OLTP query inversely for columns based storage which is adapted of OLAP query. 
 
-In term of comparison, JSON, XML are less used in data processing regarding to their indivisible. Most of case , they are used to exchange data over network and serialization and well known to support schema evolution as AVRO. This one is considered actually the leader format in case of streaming processing due to fact his ability to support. In addition, it is splittable and compressible which occurs it simultaneously the file format appropriate in big data ecosystem. That what protocol buffer lack about splittable, compressible. However, being a language fully typed as JSON , it bring better performance for compiler optimization.
+In term of comparison, JSON, XML are less used in data processing regarding to their lack of splittable. Most of case , they are used to exchange data over network and serialization and well known to support schema evolution as AVRO. This one is considered actually the leader format in case of streaming processing due to fact his ability to support schema evolution. In addition, it is splittable and compressible which occurs it simultaneously the file format appropriate in big data ecosystem. That what protocol buffer lack about splittable, compressible. However, being a language fully typed as JSON , it bring better performance for compiler optimization.
 
-The last two formats (ORC and parquet) are optimized the cost storage by avoiding repeated data. They are used in different ecosystem but strongly in hive.
+The last two formats (ORC and parquet) are optimized the cost storage by avoiding repeated data. They are used in many ecosystems of big data but strongly in hive.
 
 In general, all these differences are not statics. It's can evolve and differ according to the use cases. Some of them could be fit in order to respond a specific purpose.
   
