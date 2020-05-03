@@ -30,7 +30,7 @@ Stream processing allows to process data in real time as they arrive and quickly
 
 The schema will store the definition of each attribute and its type. Unless your data is guaranteed to never change, you’ll need to think about schema evolution in order to figure out if your data schema changes over time, does it possible to manage fields as added, deleted or renamed. Apart from AVRO, there are other file formats which support this property as protocol buffer, JSON, parquet,...
 
-According of those property , let's describe briefly each file formats and their characteristics.
+According of those properties , let's describe briefly each file formats and their characteristics.
 
 ## **Row-based file format**
 
