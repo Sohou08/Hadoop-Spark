@@ -112,7 +112,7 @@ It can’t be load data directly into ORCFILE, increases CPU overhead by increas
 
 ## __Conclusion__
 
-In general, The reading or writing fast according to the type of storage is very related to the kind of query tied to the property of each file format. Usually, column-based storage lets you ignore all the data that doesn’t apply to a particular query, because you can retrieve the information from just the columns you want. By contrast, if you were working with a row-oriented storage and you wanted to know, the average population density in cities with more than a million people, your query would access each record in the table (meaning all of its fields) to get the information from the two columns whose data you needed.That would involve a lot of unnecessary disk seeks and disk reads, which also impact performance. 
+In general,reading or writing fast according to the type of storage is very related to the kind of query tied to the property of each file format. Usually, column-based storage lets you ignore all the data that doesn’t apply to a particular query, because you can retrieve the information from just the columns you want. By contrast, if you were working with a row-oriented storage and you wanted to know, the average population density in cities with more than a million people, your query would access each record in the table (meaning all of its fields) to get the information from the two columns whose data you needed.That would involve a lot of unnecessary disk seeks and disk reads, which also impact performance. 
 
 Even all file formats could be used for each type of query, the row-based storage will be more adapted to OLTP query inversely for columns based storage which is adapted of OLAP query. 
 
