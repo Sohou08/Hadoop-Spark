@@ -38,7 +38,8 @@ According of those properties , let's describe briefly each file formats and the
 
 CSV and TSV are a text Input Format. Both are splittable and compressible and use newline as the record delimiter. They are human-readable and easy to edit manually, processed by almost all existing applications.
 In terms of comparison:
-  __CSV__ : it represents a lines of comma separated fields with an optional header. CSV uses an escape syntax to represents comma and a new line
+
+  __CSV__ : it represents a lines of comma separated fields with an optional header. It uses an escape syntax to represents comma and a new line
     * advantage
          * splittable
          * Compressible
