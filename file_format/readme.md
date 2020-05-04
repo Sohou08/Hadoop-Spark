@@ -70,7 +70,7 @@ mam No "affected, where!"	jkl
 ~~~ 
 
    ![csv-tsv](https://user-images.githubusercontent.com/51121757/80370776-b7467800-8888-11ea-9245-d0bc60d8c115.JPG)
-                   [source](https://github.com/eBay/tsv-utils/blob/master/README.md)
+    [source](https://github.com/eBay/tsv-utils/blob/master/README.md)
 
 ### 2. JSON (JavaScript object notation) 
 
