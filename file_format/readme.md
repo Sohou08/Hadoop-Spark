@@ -52,18 +52,20 @@ In terms of comparison:
       * No standard for Big data
   * __Big data__ 
       * Support a wide range of applications
+
+Here, using escapes to represent commas and quotes in data
 ~~~ {r}
 "Field1","Field2","Field3"
 "pap","affected, where!","date"
-"mam","No""affected, where!""","jkl"
+"mam","No""affected, where!""","day"
 ~~~ 
   __TSV__: it use TAB as default field delimiter
   
  * __Advantage__
      * splittable and compressible
      * usually batch processed
-     * More easy to parse than CSV due mainly to the escape syntax
-  * __Drawback__
+     * More easy to parse than CSV mainly due to the lack of escape syntax
+* __Drawback__
      * doesn't support null values and schema evolution
      * doesn't support streaming unless define manually in advance the schema 
      * No standard for Big data
@@ -162,7 +164,7 @@ AVRO stored his schema in JSON format while the data is stored in binary format,
 * __Drawback__
     
 * __Big data__ 
-    * widely used in many application
+    * widely used in many application (NoSQL,)
        
 
    ![e.g. AVRO file](https://user-images.githubusercontent.com/51121757/80033375-8232d200-84e4-11ea-9531-076f72e30bea.JPG)
