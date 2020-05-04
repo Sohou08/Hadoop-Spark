@@ -41,14 +41,14 @@ In terms of comparison:
 
   __CSV__ : it represents a lines of comma separated fields with an optional header. It uses an escape syntax to represents comma and a new line
   
-    * advantage
-         * splittable
-         * Compressible
-    * drawback
-         * doesn't support null value 
-         * Reading require programs to sparse the escape syntax
-         * doesn't support schema evolution
-         * Streaming: less
+  * advantage
+      * splittable
+      * Compressible
+  * drawback
+      * doesn't support null value 
+      * Reading require programs to sparse the escape syntax
+      * doesn't support schema evolution
+      * Streaming: less
 ~~~ {r}
 "Field1","Field2","Field3"
 "pap","affected, where!","date"
@@ -56,7 +56,7 @@ In terms of comparison:
 ~~~ 
   __TSV__: it use TAB as default field delimiter
   
-  * advantage
+ * advantage
        * splittable
        * Compressible
        * More easy to parse than CSV 
