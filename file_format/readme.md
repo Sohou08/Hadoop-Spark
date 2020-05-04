@@ -40,6 +40,7 @@ CSV and TSV are a text Input Format. Both are splittable and compressible and us
 In terms of comparison:
 
   __CSV__ : it represents a lines of comma separated fields with an optional header. It uses an escape syntax to represents comma and a new line
+  
     * advantage
          * splittable
          * Compressible
