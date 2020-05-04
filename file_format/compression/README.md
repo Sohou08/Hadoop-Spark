@@ -2,7 +2,7 @@
 # COMPRESSION DATA #
 
 Compressing big data help by reducing the amount of storage and bandwidth required for data sets, remove irrelevant or redundant data, making analysis and processing easier and faster.
-Gnerally, the codec term is employed for describing the type of compression schemes which is the shortened form of compressor/decompressor. 
+Generally, the codec term is employed for describing the type of compression schemes which is the shortened form of compressor/decompressor. 
 
 Each type of codec occurs one of these properties following:
 
@@ -44,6 +44,6 @@ The Snappy codec is integrated into Hadoop Common, a set of common utilities tha
 
 ## 4. LZO (Lempel-Ziv-Oberhumer)
 
-Similar to Snappy, LZO provides modest compression ratios, but fast compression and decompression speeds. LZO is licensed under the GNU Public License (GPL).
+Similar to Snappy, LZO provides modest compression ratios, but fast compression and decompression speeds. 
 
 LZO supports splittable compression, which enables the parallel processing of compressed text file splits by your MapReduce jobs. LZO needs to create an index when it compresses a file, because with variable-length compression blocks, an index is required to tell the mapper where it can safely split the compressed file. LZO is mainly really desirable if you need to compress text files.
