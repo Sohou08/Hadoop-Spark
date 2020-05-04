@@ -57,12 +57,12 @@ In terms of comparison:
   __TSV__: it use TAB as default field delimiter
   
  * advantage
-       * splittable
-       * Compressible
-       * More easy to parse than CSV 
+     * splittable
+     * Compressible
+     * More easy to parse than CSV 
   * drawback
-       * doesn't support null values
-       * doesn't support schema evolution
+     * doesn't support null values
+     * doesn't support schema evolution
 ~~~ {r}
 Field1	Field2	Field3
 pap affected, where!	date
