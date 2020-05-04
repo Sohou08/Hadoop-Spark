@@ -36,12 +36,39 @@ According of those properties , let's describe briefly each file formats and the
 
 ### 1. CSV and TSV
 
-CSV and TSV are a text Input Format. CSV represents a lines of comma separated fields with an optional header.
-TVS uses TAB as a default field delimiter.  
-Both are splittable and compressible. They are human-readable and easy to edit manually, processed by almost all existing applications. In terms of comparison, parsing TSV data is more simple than csv.
-They don't manage null value and generally not standard for big data.
+CSV and TSV are a text Input Format. Both are splittable and compressible and use newline as the record delimiter. They are human-readable and easy to edit manually, processed by almost all existing applications.
+In terms of comparison:
+  __CSV__ : it represents a lines of comma separated fields with an optional header. CSV uses an escape syntax to represents comma and a new line
+    * advantage
+         * splittable
+         * Compressible
+    * drawback
+         * doesn't support null value 
+         * Reading require programs to sparse the escape syntax
+         * doesn't support schema evolution
+         * Streaming: less
+~~~ {r}
+"Field1","Field2","Field3"
+"pap","affected, where!","date"
+"mam","No""affected, where!""","jkl"
+~~~ 
+  __TSV__: it use TAB as default field delimiter
+  
+  * advantage
+       * splittable
+       * Compressible
+       * More easy to parse than CSV 
+  * drawback
+       * doesn't support null values
+       * doesn't support schema evolution
+~~~ {r}
+Field1	Field2	Field3
+pap affected, where!	date
+mam No "affected, where!"	jkl
+~~~ 
 
    ![csv-tsv](https://user-images.githubusercontent.com/51121757/80370776-b7467800-8888-11ea-9245-d0bc60d8c115.JPG)
+                   [source](https://github.com/eBay/tsv-utils/blob/master/README.md)
 
 ### 2. JSON (JavaScript object notation) 
 
