@@ -88,10 +88,9 @@ JSON is a text Input Format containing record which might be in any form (string
     * store metadata with data and support schema evolution
     * fully typed performing the compiler optimization.
 * __Drawback__
-    * 
     * No splittable 
 * __Big data__ 
-       *  widely used for NoSQL databases, other engine as Spark, Kafka, Node.js, pig,..
+    *  widely used for NoSQL databases, other engine as Spark, Kafka, Node.js, pig,..
 ~~~ {r}
        {
           "StudentId": "trgfg-5454-fdfdg-4346",
@@ -127,7 +126,7 @@ XML syntax is verbose, especially for human readers, relative to other alternati
 * __Drawback__
     * No splittable : XML has an opening tag at the beginning and a closing tag at the end. You cannot start processing at any point in the middle of those tags.
 * __Big data__ 
-       * Pig (To process XMLs in Pig, piggybank.jar is essential. This jar contains a UDF called XMLLoader() that will be used to read the XML document),..
+    * Pig (To process XMLs in Pig, piggybank.jar is essential. This jar contains a UDF called XMLLoader() that will be used to read the XML document),..
        
        ~~~ {r}
        <?xml version="1.0"?>
@@ -147,7 +146,8 @@ XML syntax is verbose, especially for human readers, relative to other alternati
        creations/deletions), or "all".</description>
        </property>
        ~~~ 
-      [source](https://github.com/facebookarchive/hadoop-20/blob/master/src/hdfs/hdfs-default.xml)
+    
+  [source](https://github.com/facebookarchive/hadoop-20/blob/master/src/hdfs/hdfs-default.xml)
        
 
 ### 4. AVRO
@@ -160,9 +160,9 @@ AVRO stored his schema in JSON format while the data is stored in binary format,
     * Highly support schema evolution
     * Support batch and mostly streaming processing
 * __Drawback__
-    * 
+    
 * __Big data__ 
-       * widely used in many application
+    * widely used in many application
        
 
    ![e.g. AVRO file](https://user-images.githubusercontent.com/51121757/80033375-8232d200-84e4-11ea-9531-076f72e30bea.JPG)
@@ -181,7 +181,7 @@ Protocol buffer is language-neutral, an extensible way of serializing structured
     * No splittable and No Compressible
     * doesn't support Map reduce
 * __Big data__ 
-       * widely used in many application
+    * widely used in many application
 ~~~{r}
 message Person {
   required string name = 1;
