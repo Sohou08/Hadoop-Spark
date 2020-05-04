@@ -29,18 +29,23 @@ The speed is more based of the performance time to compress or decompress a give
 ## 1. Gzip (short for GNU zip)
 
  Gzip generates compressed files that have a .gz extension. Gunzip command can be used to decompress files that were created by a number of compression utilities, including Gzip.
+   * __Advantage__
+      * 
 
 ## 2. Bzip2
 
-From a usability standpoint, Bzip2 and Gzip are similar. Bzip2 generates a better compression ratio than does Gzip, but it’s much slower. In fact, Of all the available compression codecs in Hadoop, Bzip2 is by far the slowest.
+From a usability standpoint, Bzip2 and Gzip are similar. 
 
-If you’re setting up an archive that you’ll rarely need to query and space is at a high premium, then maybe would Bzip2 be worth considering.
-
+* __Advantage__
+   * If you’re setting up an archive that you’ll rarely need to query and space is at a high premium, then maybe would Bzip2 be worth considering.
+   * It generates a better compression ratio than does Gzip
+* __Drawback__
+   * all the available compression codecs in Hadoop, Bzip2 is by far the slowest.
 ## 3. Snappy
 
 The Snappy codec from Google provides modest compression ratios, but fast compression and decompression speeds. (In fact, it has the fastest decompression speeds, which makes it highly desirable for data sets that are likely to be queried often.)
 
-The Snappy codec is integrated into Hadoop Common, a set of common utilities that supports other Hadoop subprojects. You can use Snappy as an add-on for more recent versions of Hadoop that do not yet provide Snappy codec support.
+You can use Snappy as an add-on for more recent versions of Hadoop that do not yet provide Snappy codec support.
 
 ## 4. LZO (Lempel-Ziv-Oberhumer)
 
