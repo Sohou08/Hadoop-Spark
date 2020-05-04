@@ -41,10 +41,10 @@ In terms of comparison:
 
   __CSV__ : it represents a lines of comma separated fields with an optional header. It uses an escape syntax to represents comma and a new line
   
-  * __advantage__
+  * __Advantage__
       * splittable and compressible
       * usually batch processed
-  * __drawback__
+  * __Drawback__
       * doesn't support null value 
       * Reading require programs to sparse the escape syntax
       * No schema evolution
@@ -59,11 +59,11 @@ In terms of comparison:
 ~~~ 
   __TSV__: it use TAB as default field delimiter
   
- * __advantage__
+ * __Advantage__
      * splittable and compressible
      * usually batch processed
      * More easy to parse than CSV due mainly to the escape syntax
-  * __drawback__
+  * __Drawback__
      * doesn't support null values and schema evolution
      * doesn't support streaming unless define manually in advance the schema 
      * No standard for Big data
@@ -75,21 +75,19 @@ Field1	Field2	Field3
 pap affected, where!	date
 mam No "affected, where!"	jkl
 ~~~ 
-
-   ![csv-tsv](https://user-images.githubusercontent.com/51121757/80370776-b7467800-8888-11ea-9245-d0bc60d8c115.JPG)
   [source](https://github.com/eBay/tsv-utils/blob/master/README.md)
 
 ### 2. JSON (JavaScript object notation) 
 
 JSON is a text Input Format containing record which might be in any form (string, integer, booleans, array, object, key-value, nested data...). It support serialization and deserialization process. 
  
-* __advantage__
+* __Advantage__
     * compressible 
     * data exchange format
     * Support batch/streaming processing
     * store metadata with data and support schema evolution
     * fully typed performing the compiler optimization.
-* __drawback__
+* __Drawback__
     * 
     * No splittable 
 * __Big data__ 
@@ -122,11 +120,11 @@ JSON is a text Input Format containing record which might be in any form (string
 XML is a input text format. As Json,  It is generally used to serialize, encapsulate, and exchange data. 
 XML syntax is verbose, especially for human readers, relative to other alternatives ‘text-based’ formats. Document size is often bulky and with big files, the tag structure makes it huge and complex to read which occurs slow process in parsing, leading also to slower data transmission.
 
-* __advantage__
+* __Advantage__
     * data exchange format
     * Support batch/streaming processing
     * store meta data with data and support schema evolution
-* __drawback__
+* __Drawback__
     * No splittable : XML has an opening tag at the beginning and a closing tag at the end. You cannot start processing at any point in the middle of those tags.
 * __Big data__ 
        * Pig (To process XMLs in Pig, piggybank.jar is essential. This jar contains a UDF called XMLLoader() that will be used to read the XML document),..
@@ -156,12 +154,12 @@ XML syntax is verbose, especially for human readers, relative to other alternati
 
 AVRO stored his schema in JSON format while the data is stored in binary format, minimizing file size and maximizing efficiency and to be compacted easily. It attach metadata into their data in each record. 
 
-* __advantage__
+* __Advantage__
     * Splittable (AVRO has a sync marker to separate the block) 
     * Compressible (at different time and independently)
     * Highly support schema evolution
     * Support batch and mostly streaming processing
-* __drawback__
+* __Drawback__
     * 
 * __Big data__ 
        * widely used in many application
@@ -175,11 +173,11 @@ AVRO stored his schema in JSON format while the data is stored in binary format,
 
 Protocol buffer is language-neutral, an extensible way of serializing structured data for use in communications protocols, data storage, and more. You can easily read it and understand it as an human. The schema is needed to generate code and read the data. 
    
-* __advantage__
+* __Advantage__
     * data fully typed
     * support schema evolution
     * Support batch and mostly streaming processing
-* __drawback__
+* __Drawback__
     * No splittable and No Compressible
     * doesn't support Map reduce
 * __Big data__ 
@@ -213,12 +211,12 @@ message Person {
 
 Parquet is a binary file containing  metadata about their content. The column metadata for a Parquet file is stored at the end of the file, which allows for fast, one-pass writing. Parquet is optimized for the write Once read many (WORM). 
 
- * __advantage__
+ * __Advantage__
      * splittable and compressible
      * OLAP/OLTP
      * support schema evolution
      * Support batch/streaming processing
- * __drawback__
+ * __Drawback__
      * no easy to write due to his WORM property
      * 
  * __Big data__ 
@@ -234,12 +232,12 @@ Parquet is a binary file containing  metadata about their content. The column me
 ORC file contains groups of row data called stripes, along with auxiliary information in a file footer. At the end of the file a postscript holds compression parameters and the size of the compressed footer.
 The default stripe size is 250 MB. Large stripe sizes enable large, efficient reads from HDFS.
 
-  * __advantage__
+  * __Advantage__
       * compressible
       * reduce the size of the original data up to 75%
       * OLAP (more efficient)/OLTP
       * Support batch/streaming processing
-   * __drawback__
+   * __Drawback__
       * can’t be load data directly into ORCFILE
       * does not support schema evolution
    * __Big data__ 
