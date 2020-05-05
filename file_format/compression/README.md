@@ -39,16 +39,28 @@ From a usability standpoint, Bzip2 and Gzip are similar.
 * __Advantage__
    * If you’re setting up an archive that you’ll rarely need to query and space is at a high premium, then maybe would Bzip2 be worth considering.
    * It generates a better compression ratio than does Gzip
+   * splittable
 * __Drawback__
    * all the available compression codecs in Hadoop, Bzip2 is by far the slowest.
+   
 ## 3. Snappy
 
 The Snappy codec from Google provides modest compression ratios, but fast compression and decompression speeds. (In fact, it has the fastest decompression speeds, which makes it highly desirable for data sets that are likely to be queried often.)
 
 You can use Snappy as an add-on for more recent versions of Hadoop that do not yet provide Snappy codec support.
 
+* __Advantage__
+   * default compression parquet in Impala
+   * combination of fast compression and decompression 
+* __Drawback__
+   * 
+   
+
 ## 4. LZO (Lempel-Ziv-Oberhumer)
 
 Similar to Snappy, LZO provides modest compression ratios, but fast compression and decompression speeds. 
 
 LZO supports splittable compression, which enables the parallel processing of compressed text file splits by your MapReduce jobs. LZO needs to create an index when it compresses a file, because with variable-length compression blocks, an index is required to tell the mapper where it can safely split the compressed file. LZO is mainly really desirable if you need to compress text files.
+
+## 4. Zstd
+Zstd is a real-time compression algorithm offering a tradeoff between speed and ratio of compression. Compression levels from 1 up to 22 are supported. The lower the level, the faster the speed at the cost of compression ratio.

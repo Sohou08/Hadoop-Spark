@@ -39,44 +39,49 @@ According of those properties , let's describe briefly each file formats and the
 CSV and TSV are a text Input Format. Both are splittable and compressible and use newline as the record delimiter. They are human-readable and easy to edit manually, processed by almost all existing applications.
 In terms of comparison:
 
-  __CSV__ : it represents a lines of comma separated fields with an optional header. It uses an escape syntax to represents comma and a new line
-  
-  * __Advantage__
-      * splittable and compressible
-      * usually batch processed
-  * __Drawback__
-      * doesn't support null value 
-      * Reading require programs to sparse the escape syntax
-      * No schema evolution
-      * doesn't support streaming unless define manually in advance the schema 
-      * No standard for Big data
-  * __Big data__ 
-      * Support a wide range of applications
+__CSV__ : it represents a lines of comma separated fields with an optional header. It uses an escape syntax to represents comma and a new line
 
-Here, using escapes to represent commas and quotes in data
-~~~ {r}
-"Field1","Field2","Field3"
-"pap","affected, where!","date"
-"mam","No""affected, where!""","day"
-~~~ 
-  __TSV__: it use TAB as default field delimiter
+  Here, using escapes to represent commas and quotes in data
   
- * __Advantage__
-     * splittable and compressible
-     * usually batch processed
-     * More easy to parse than CSV mainly due to the lack of escape syntax
-* __Drawback__
-     * doesn't support null values and schema evolution
-     * doesn't support streaming unless define manually in advance the schema 
-     * No standard for Big data
-  * __Big data__ 
-     *  Support a wide range of applications
-     
+~~~ {r}
+  "Field1","Field2","Field3"
+  "pap","affected, where!","date"
+  "mam","No""affected, where!""","day"
+~~~ 
+
+The same data in TSV will be:
 ~~~ {r}
 Field1	Field2	Field3
 pap affected, where!	date
-mam No "affected, where!"	jkl
-~~~ 
+mam No "affected, where!"	day
+~~~
+  
+   * __Advantage__
+       * splittable and compressible
+       * usually batch processed
+   * __Drawback__
+       * doesn't support null value 
+       * Reading require programs to sparse the escape syntax
+       * No schema evolution
+       * doesn't support streaming unless you define manually in advance the schema 
+       * No standard for Big data
+   * __Big data__ 
+       * Support a wide range of applications
+
+
+__TSV__: it use TAB as default field delimiter
+  
+   * __Advantage__
+       * splittable and compressible
+       * usually batch processed
+       * More easy to parse than CSV mainly due to the lack of escape syntax
+   * __Drawback__
+       * doesn't support null values and schema evolution
+       * as CSV doesn't support streaming unless you define manually in advance the schema 
+       * No standard for Big data
+   * __Big data__ 
+       *  Support a wide range of applications
+ 
   [source](https://github.com/eBay/tsv-utils/blob/master/README.md)
 
 ### 2. JSON (JavaScript object notation) 
@@ -89,10 +94,14 @@ JSON is a text Input Format containing record which might be in any form (string
     * Support batch/streaming processing
     * store metadata with data and support schema evolution
     * fully typed performing the compiler optimization.
+    * lightweight text-based format in comparison to XML 
 * __Drawback__
     * No splittable 
+    * Lack indexing 
 * __Big data__ 
-    *  widely used for NoSQL databases, other engine as Spark, Kafka, Node.js, pig,..
+    *  widely used for NoSQL databases as MongoDB, due to the fact they are easier to modify there than in structured database as Postgres where you'd need to extract the whole document for changing.
+    * GSON library is considered very efficient for parsing JSON file
+    
 ~~~ {r}
        {
           "StudentId": "trgfg-5454-fdfdg-4346",
@@ -119,7 +128,7 @@ JSON is a text Input Format containing record which might be in any form (string
 ### 3. XML 
 
 XML is a input text format. As Json,  It is generally used to serialize, encapsulate, and exchange data. 
-XML syntax is verbose, especially for human readers, relative to other alternatives ‘text-based’ formats. Document size is often bulky and with big files, the tag structure makes it huge and complex to read which occurs slow process in parsing, leading also to slower data transmission.
+XML syntax is verbose, especially for human readers, relative to other alternatives ‘text-based’ formats. 
 
 * __Advantage__
     * data exchange format
@@ -127,6 +136,7 @@ XML syntax is verbose, especially for human readers, relative to other alternati
     * store meta data with data and support schema evolution
 * __Drawback__
     * No splittable : XML has an opening tag at the beginning and a closing tag at the end. You cannot start processing at any point in the middle of those tags.
+    * increase in data size and processing time because the document size is often bulky and with big files, the tag structure makes it huge and complex to read which occurs slow process in parsing, leading also to slower data transmission
 * __Big data__ 
     * Pig (To process XMLs in Pig, piggybank.jar is essential. This jar contains a UDF called XMLLoader() that will be used to read the XML document),..
        
@@ -158,13 +168,16 @@ AVRO stored his schema in JSON format while the data is stored in binary format,
 
 * __Advantage__
     * Splittable (AVRO has a sync marker to separate the block) 
+    * data storage is very compact, fast and efficient 
     * Compressible (at different time and independently)
     * Highly support schema evolution
     * Support batch and mostly streaming processing
+    * Avro serializes fast and the data resulting after serialization is least in size with schemas.
 * __Drawback__
     
 * __Big data__ 
-    * widely used in many application (NoSQL,)
+    * widely used in many application
+    * Impala cannot write Avro data files
        
 
    ![e.g. AVRO file](https://user-images.githubusercontent.com/51121757/80033375-8232d200-84e4-11ea-9531-076f72e30bea.JPG)
@@ -178,12 +191,15 @@ Protocol buffer is language-neutral, an extensible way of serializing structured
 * __Advantage__
     * data fully typed
     * support schema evolution
-    * Support batch and mostly streaming processing
+    * Support batch/streaming
+    * As avro , it mainly used to serialize data
 * __Drawback__
     * No splittable and No Compressible
     * doesn't support Map reduce
 * __Big data__ 
     * widely used in many application
+    * ProfaneDB is a database for Protocol Buffer objects.
+    
 ~~~{r}
 message Person {
   required string name = 1;
@@ -214,16 +230,17 @@ message Person {
 Parquet is a binary file containing  metadata about their content. The column metadata for a Parquet file is stored at the end of the file, which allows for fast, one-pass writing. Parquet is optimized for the write Once read many (WORM). 
 
  * __Advantage__
-     * splittable and compressible
-     * OLAP/OLTP
+     * splittable and compressible by default
+     * organizing by column allows for better compression, as data is more homogeneous.
+     * efficient for OLAP query
      * support schema evolution
      * Support batch/streaming processing
  * __Drawback__
-     * no easy to write due to his WORM property
-     * 
+     * difficult to make a update in parquet table unless you delete and recreate again the given subset.
  * __Big data__ 
+     * very fast to read in Spark environment
      * Hive and Impala are able to query newly added columns, but other tools in the ecosystem such as Hadoop Pig may face challenges.
-     * widely used in many application mainly in HIVE
+     
      
    ![parquet](https://user-images.githubusercontent.com/51121757/80372035-c3333980-888a-11ea-87af-97425e00c476.JPG)
 
@@ -238,7 +255,7 @@ The default stripe size is 250 MB. Large stripe sizes enable large, efficient re
       * compressible
       * reduce the size of the original data up to 75%
       * OLAP (more efficient)/OLTP
-      * Support batch/streaming processing
+      * Support batch
    * __Drawback__
       * can’t be load data directly into ORCFILE
       * does not support schema evolution
