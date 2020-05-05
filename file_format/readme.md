@@ -1,5 +1,5 @@
 
-# APPLICATION/USE CASES OF FILE FORMATS: BENCHMARK STUDY BETWEEN CSV, ORC, JSON, PROTOCOLE BUFFER, AVRO, PARQUET, XML #
+# BIG DATA FILE FORMATS: BENCHMARK STUDY BETWEEN CSV, ORC, JSON, PROTOCOLE BUFFER, AVRO, PARQUET, XML #
 
 Big data ecosystem (Hadoop, Apache) support multiples types of files formats according of the analysis purpose. Thus, the goal of this report is to understand what are the most suitable to:
 
