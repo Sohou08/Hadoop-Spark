@@ -14,7 +14,7 @@ OLTP is an online Transaction Processing system. The main focus of OLTP system i
 
 +	__Be splittable i.e. multiple task can run parallel on parts of file__
 
-Hadoop stores and processes data in blocks. So, be able to begin reading data at any point within a file is helpful in order to take fullest advantage of Hadoop’s distributed processing. Thereupon, splittable files is suitable so that its massively distributed engine can leverage data locality and parallel processing. That the case of JSON and XML which doesn't take advantage of that because they are not splittable.
+Hadoop stores and processes data in blocks. So, be able to begin reading data at any point within a file is helpful in order to take fullest advantage of Hadoop’s distributed processing. Thereupon, splittable files is suitable so that its massively distributed engine can leverage data locality and parallel processing. That's the case of JSON and XML which doesn't take advantage of that because they are not splittable.
 
 +   __Support advanced compression through various compression codecs (Bzip2, LZO, Sappy,...)__.
 
@@ -59,7 +59,7 @@ mam No "affected, where!"	day
   
    * __Advantage__
        * splittable and compressible
-       * usually batch processed
+       * usually batch processed      
    * __Drawback__
        * doesn't support null value 
        * Reading require programs to sparse the escape syntax
@@ -87,7 +87,7 @@ __TSV__: it use TAB as default field delimiter
 
 ### 2. JSON (JavaScript object notation) 
 
-JSON is a text Input Format containing record which might be in any form (string, integer, booleans, array, object, key-value, nested data...). It support serialization and deserialization process. 
+JSON is a text Input Format containing record which might be in any form (string, integer, booleans, array, object, key-value, nested data...). It support serialization and deserialization process and is human readable.
  
 * __Advantage__
     * compressible 
@@ -140,6 +140,7 @@ XML syntax is verbose, especially for human readers, relative to other alternati
     * increase in data size and processing time because the document size is often bulky and with big files, the tag structure makes it huge and complex to read which occurs slow process in parsing, leading also to slower data transmission
 * __Big data__ 
     * Pig (To process XMLs in Pig, piggybank.jar is essential. This jar contains a UDF called XMLLoader() that will be used to read the XML document),..
+    * Some function from the library Apache Mahout is really helpful to process XML data stored in HDFS
        
        ~~~ {r}
        <?xml version="1.0"?>
@@ -177,7 +178,7 @@ AVRO stored his schema in JSON format while the data is stored in binary format,
 * __Drawback__
     
 * __Big data__ 
-    * widely used in many application
+    * widely used in many application (kafka, spark, Cassandra )
     * Impala cannot write Avro data files
        
 
@@ -235,12 +236,16 @@ Parquet is a binary file containing  metadata about their content. The column me
      * organizing by column allows for better compression, as data is more homogeneous.
      * efficient for OLAP query
      * support schema evolution
+     * No human readable
      * Support batch/streaming processing
  * __Drawback__
-     * difficult to make a update in parquet table unless you delete and recreate again the given subset.
+     * difficult to make a update in parquet table unless you delete and recreate it again.
  * __Big data__ 
      * very fast to read in Spark environment
+     * aside Spark and Impala; Arrow, Drill are part of the most compatible platforms
      * Hive and Impala are able to query newly added columns, but other tools in the ecosystem such as Hadoop Pig may face challenges.
+     
+     
      
      
    ![parquet](https://user-images.githubusercontent.com/51121757/80372035-c3333980-888a-11ea-87af-97425e00c476.JPG)
@@ -262,6 +267,7 @@ The default stripe size is 250 MB. Large stripe sizes enable large, efficient re
       * does not support schema evolution
    * __Big data__ 
       * improves performance reading, writing, and processing in Hive
+      * Impala currently does not support ORC format
       
 
    ![ORC](https://user-images.githubusercontent.com/51121757/80372034-c29aa300-888a-11ea-9b37-0114b5a0c0c2.JPG)
