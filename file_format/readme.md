@@ -288,10 +288,9 @@ In general, all these differences are not statics. It's can evolve and differ ac
   
 ##  Overview
 
-[Comparison table 1](https://user-images.githubusercontent.com/51121757/80630250-d6413780-8a4b-11ea-912c-6a31a5b9da0b.JPG)
+[Comparison table 1](https://user-images.githubusercontent.com/51121757/81096991-1fd3cb80-8eff-11ea-970f-ba1897219a0d.JPG)
 
-[Comparison table 2](https://user-images.githubusercontent.com/51121757/80630241-d5100a80-8a4b-11ea-87bf-657ef500183d.JPG)
-
+[Comparison table 2](https://user-images.githubusercontent.com/51121757/81096996-22362580-8eff-11ea-9d5a-3f2b82db411e.JPG)
 
 [e.g. File format comparison](https://2s7gjr373w3x22jf92z99mgm5w-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/Nexla-File-Format.png), [e.g. Comparison in terms of reading, space,storage, execution time,...](https://luminousmen.com/post/big-data-file-formats)
 
