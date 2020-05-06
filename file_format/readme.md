@@ -243,7 +243,7 @@ Parquet is a binary file containing  metadata about their content. The column me
      * No human readable
      * Support batch/streaming processing
  * __Drawback__
-     * difficult to make a update in parquet table unless you delete and recreate it again.
+     * difficult to make a update a parquet table unless you delete and recreate it again.
  * __Big data__ 
      * very fast to read in Spark environment
      * aside Spark and Impala; Arrow, Drill are part of the most compatible platforms
