@@ -67,7 +67,7 @@ mam No "affected, where!"	day
        * doesn't support streaming unless you define manually in advance the schema 
        * No standard for Big data
    * __Big data__ 
-       * Support a wide range of applications
+       * Support a wide range of applications (Hadoop, spark, kafka,...)
 
 
 __TSV__: it use TAB as default field delimiter
@@ -81,13 +81,13 @@ __TSV__: it use TAB as default field delimiter
        * as CSV doesn't support streaming unless you define manually in advance the schema 
        * No standard for Big data
    * __Big data__ 
-       *  Support a wide range of applications
+       *  Support a wide range of applications (Hadoop, spark, kafka,...)
  
   [source](https://github.com/eBay/tsv-utils/blob/master/README.md)
 
 ### 2. JSON (JavaScript object notation) 
 
-JSON is a text Input Format containing record which might be in any form (string, integer, booleans, array, object, key-value, nested data...). It support serialization and deserialization process and is human readable.
+JSON is a text Input Format containing record which might be in any form (string, integer, booleans, array, object, key-value, nested data...). It support serialization and deserialization process and is an human readable format.
  
 * __Advantage__
     * compressible 
@@ -139,6 +139,7 @@ XML syntax is verbose, especially for human readers, relative to other alternati
     * No splittable : XML has an opening tag at the beginning and a closing tag at the end. You cannot start processing at any point in the middle of those tags.
     * increase in data size and processing time because the document size is often bulky and with big files, the tag structure makes it huge and complex to read which occurs slow process in parsing, leading also to slower data transmission
 * __Big data__ 
+    * NoSQL data (MongoDB, Cassandra)
     * Pig (To process XMLs in Pig, piggybank.jar is essential. This jar contains a UDF called XMLLoader() that will be used to read the XML document),..
     * Some function from the library Apache Mahout is really helpful to process XML data stored in HDFS
        
@@ -176,6 +177,7 @@ AVRO stored his schema in JSON format while the data is stored in binary format,
     * Support batch and mostly streaming processing
     * Avro serializes fast and the data resulting after serialization is least in size with schemas.
 * __Drawback__
+    * data is encoded as binary, so data can be difficult to decode while testing/debugging
     
 * __Big data__ 
     * widely used in many application (kafka, spark, Cassandra )
@@ -198,8 +200,9 @@ Protocol buffer is language-neutral, an extensible way of serializing structured
 * __Drawback__
     * No splittable and No Compressible
     * doesn't support Map reduce
+    * Protocol Buffers are not designed to handle large messages. Since it doesn't support random access. You'll have to read the whole file, even if you only want to access a specific item.
 * __Big data__ 
-    * widely used in many application
+    * MongoDB
     * ProfaneDB is a database for Protocol Buffer objects.
     
 ~~~{r}
