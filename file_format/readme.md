@@ -239,7 +239,7 @@ The default stripe size is 250 MB. Large stripe sizes enable large, efficient re
 
 [Source](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+ORC) 
 
-## [**Conclusion_**]()
+## [**Conclusion**]()
 
 In general, reading or writing fast according to the type of storage is very related to the kind of query tied to the property of each file format. Usually, row-oriented databases are well-suited for OLTP-like workloads whereas column-oriented systems is well suited of OLAP query. Column data in column based storage is of uniform type; therefore, it will be more easy and better to compress compared a row based storage. 
 
