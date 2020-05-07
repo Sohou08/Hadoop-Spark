@@ -1,4 +1,5 @@
 
-~~~{r}
-|Tables | Are | Cool | |----------|:-------------:|------:| | col 1 is| left-aligned | $1600 |
-~~~
+Markdown | Less | Pretty
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
