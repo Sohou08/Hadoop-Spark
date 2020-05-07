@@ -7,7 +7,7 @@ For instance, CSV is a file format which is very understandably. In case of web 
 
 Thus, we would be covering firstly various such aspects of storage type; compression required; splittable; batch or stream process and the schema evolution then end up with detailed description of each file format named above.
 
-## **Consideration to be taken into account for choosing a file format**
+## [**Consideration to be taken into account for choosing a file format**]()
 
 The choice of a big data format need to known whether a row or column-based format is best suited to your objectives. In row based storage, the data is stored row by row, such that the first column of a row will be next to the last column of the previous row. So, these kind of architecture are appropriate to add data easily and quickly too. It is suitable for situations where the entire row of data needs to be processed simultaneously. That is commonly used for Online Transactional Processing (OLTP). OLTP systems process all kinds of queries (Read, Insert, Update and Delete)
 
