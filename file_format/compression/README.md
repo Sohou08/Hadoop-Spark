@@ -2,7 +2,7 @@
 # COMPRESSION DATA #
 
 Compressing big data help by reducing the amount of storage and bandwidth required for data sets, remove irrelevant or redundant data, making analysis and processing easier and faster.
-Generally, the codec term is employed for describing the type of compression schemes which is the shortened form of compressor/decompressor. There exist many kinds of compression type involving various proprieties of splittable, in terms of performance and ration of compression.
+Generally, the codec term is employed for describing the type of compression schemes which is the shortened form of compressor/decompressor. There exist many kinds of compression type involving various proprieties: splittable, in terms of performance and ration of compression.
 
 Let's describe first those proprieties 
 
