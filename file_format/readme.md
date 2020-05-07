@@ -39,9 +39,9 @@ Over a period of time (day,week,...) occurring a block of data, batch processing
 
 The schema will store the definition of each attribute and its type. Unless your data is guaranteed to never change, you’ll need to think about schema evolution in order to figure out if your data schema changes over time, does it possible to manage fields as added, deleted or renamed. 
 
-+	__FILE FORMAT DESCRIPTION__
+## [**FILE FORMAT DESCRIPTION_**]()
 
-## 1. CSV 
+### 1. CSV 
 
 CSV is a text Input Format and use newline as the record delimiter with an optional header. It is human-readable and easy to edit manually, processed by almost all existing applications. Le CSV ne contient pas dans ces data le schema du coup 
 
@@ -192,8 +192,6 @@ syntax = "proto3";
                     } 
 ~~~
 
-## **Column-based file format**
-
 ### 6. Parquet
 
 Parquet is a binary file containing  metadata about their content. The column metadata for a Parquet file is stored at the end of the file, which allows for fast, one-pass writing. Parquet is optimized for the write Once read many (WORM). 
@@ -241,7 +239,7 @@ The default stripe size is 250 MB. Large stripe sizes enable large, efficient re
 
 [Source](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+ORC) 
 
-## __Conclusion__
+## [**Conclusion_**]()
 
 In general, reading or writing fast according to the type of storage is very related to the kind of query tied to the property of each file format. Usually, row-oriented databases are well-suited for OLTP-like workloads whereas column-oriented systems is well suited of OLAP query. Column data in column based storage is of uniform type; therefore, it will be more easy and better to compress compared a row based storage. 
 
