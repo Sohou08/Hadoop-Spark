@@ -1,9 +1,10 @@
 
 # BENCHMARK STUDY OF DIFFERENT FILE FORMATS: CSV, JSON, XML PROTOCOL BUFFER, AVRO, PARQUET, ORC #
 
-There exist a different types of files formats according of the analysis purpose. These formats have their own pros and cons depending upon the use cases what is important into take account when choosing them. Some of them are more relevant of certain analysis (e.g BI), data exchange over network, web application; batch or stream processing;...
+There are different types of files formats according of the analysis purpose. These formats have their own pros and cons depending upon the use cases what is really important into take account when choosing them. Some of them are more relevant of certain analysis (e.g BI), data exchange over network, web application; batch or stream processing;...
 
-For instance, CSV is a file format which is very understandably. In case of web API or web development,  JSON is the privilege even in some case XML could do the same work. The advantage of XML is his standardize and specific format which occurs. As for AVRO and Protocol buffer, they are considered a favor format in streaming processing. In addition, protocol buffer is the stand of CRI (Container Runtime Interface) in Kubernetes and also to gRPC service. In Business Intelligence , there are some file format as ORC and parquet which occurs an efficient analysis due to generally to their column storage type. As you see, each file format include his own specify and interest according to the use cases. 
+For instance, CSV is a file format which is very understandably. In case of web API or web development, JSON is privileged even in some case XML could do the same work. The advantage of the latter is his standardize and specific format which provides. 
+Speaking streaming processing, the most favored format are AVRO and Protocol buffer regardless to their good ingestion. In addition, protocol buffer is the stand of CRI (Container Runtime Interface) in Kubernetes and also to gRPC (Remote procedure call) service. In Business Intelligence , there are some file format as ORC and parquet which occurs an efficient analysis due to generally to their column storage type. As you see, each file format include his own specify and interest according to the use cases. 
 
 Thus, we would be covering firstly various such aspects of storage type; compression required; splittable; batch or stream process and the schema evolution then end up with detailed description of each file format named above.
 
