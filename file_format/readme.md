@@ -97,7 +97,6 @@ It cannot be splittable compare to JSON lines. This one essentially consists of 
                                    ]
         }
 ~~~ 
-
 [Example of JSON lines](https://hackernoon.com/json-lines-format-76353b4e588d):
 ~~~{r}
 {"id":1,"father":"Mark","mother":"Charlotte","children":["Tom"]}
