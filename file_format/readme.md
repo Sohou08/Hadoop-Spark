@@ -39,7 +39,7 @@ Stream processing allows to process data in real time as they arrive and quickly
 
 The schema will store the definition of each attribute and its type. Unless your data is guaranteed to never change, you’ll need to think about schema evolution in order to figure out if your data schema changes over time, does it possible to manage fields as added, deleted or renamed. 
 
-## [**FILE FORMAT DESCRIPTION**]()
+## [**File format description**]()
 
 ### 1. CSV 
 
