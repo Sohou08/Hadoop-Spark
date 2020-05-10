@@ -20,7 +20,7 @@ Speaking of disk reads, columnar databases could boost performance in another wa
 
 *  __Splittable__
 
-In case of distributed environment, it is important to have a file that can be divide into several pieces. That's the case of Hadoop which stores and processes data in chunk. So, be able to begin reading data at any point within a file is helpful in order to take fullest advantage of Hadoop’s distributed processing ([document](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html)). That why taking account the splittable is very important aspects for scalable task parallel programming. This way of structured (splitted and partitioned data) could participate of lecture optimized since you only read or process the block of data which are requisite. 
+In case of distributed environment, it is important to have a file that can be divide into several pieces. That's the case of Hadoop which stores and processes data in chunk. So, be able to begin reading data at any point within a file is helpful in order to take fullest advantage of Hadoop’s distributed processing ([documentation](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html)). That why taking account the splittable is very important aspects for scalable task parallel programming. This way of structured (splitted and partitioned data) could participate of lecture optimized since you only read or process the block of data which are requisite. 
 Unfortunately, JSON and XML which doesn't take advantage of that because they are not splittable.
 
 * __Compression (Bzip2, LZO, Sappy,...)__
@@ -29,7 +29,7 @@ Within a distributed system, data being stored in disc, this one is often slower
 In addition, column based storage type is very fast and better to compress than row based storage since you're storing similar pieces of data together.
 Generally, text formats types are more compressible than a binary format. It could be due to their file size. For instance compress XML being a file format which is verbose and might have repeated, is  
 more reducible compare to video file.
-There are many kind of compression algorithm which differ according of the ratio of compression, speed, performance, splittable,... [For more information about compression](https://github.com/Sohou08/Hadoop-Spark/tree/master/file_format/compression). 
+There are many kind of compression algorithm which differ according of the ratio of compression, speed, performance, splittable,... [documentation](https://github.com/Sohou08/Hadoop-Spark/tree/master/file_format/compression). 
 
 * __Streaming and Batch__
 
@@ -176,7 +176,7 @@ Protocol buffer is language-neutral, an extensible way of serializing structured
     * Protocol Buffers are not designed to handle large messages. Since it doesn't support random access. You'll have to read the whole file, even if you only want to access a specific item.
 * __Ecosystems__ 
     * provides tools to generate code for the most used programming languages around, like JavaScript, Java, PHP, C#, Ruby, Objective C, Python, C++ and Go
-    * is a format support of CRI and gRPC in kubernetes [info](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/). CRI is a plugin interface which enables kubelet to use a wide variety of container runtimes, without the need to recompile. RPC is indeed is a network protocol for making procedure calls on a remote computer using an application server.
+    * is a format support of CRI and gRPC in kubernetes [documentation](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/). CRI is a plugin interface which enables kubelet to use a wide variety of container runtimes, without the need to recompile. RPC is indeed is a network protocol for making procedure calls on a remote computer using an application server.
     * ProfaneDB is a database for Protocol Buffer objects.
   
 ~~~{r}
