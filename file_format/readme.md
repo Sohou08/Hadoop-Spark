@@ -1,18 +1,19 @@
 
 # BENCHMARK STUDY OF DIFFERENT FILE FORMATS: CSV, JSON, XML PROTOCOL BUFFER, AVRO, PARQUET, ORC #
 
-There are different types of files formats according of the analysis purpose. Each format has their own pros and cons depending upon the use cases what is really important into take account when choosing them. Some of them are more relevant of certain analysis (e.g Business Intelligence), data exchange over network, web application; batch or stream processing;...
+There are different types of files formats according of the analysis purpose. Each format has its own pros and cons depending upon the use cases. This is really important to take account when choosing a specific format type. There is some type of format which is more relevant in certain analysis as e.g Business Intelligence, data exchange over network, web application; batch or stream processing;...
 
-For instance, CSV is a file format which is very understandably. In case of web API or web development, JSON is privileged even in some case XML could do the same work. The advantage of the latter is his standardize and specific format that's provides. 
-Speaking streaming processing, the most favored format are AVRO and Protocol buffer regardless to their good ingestion. In addition, protocol buffer is the stand of CRI (Container Runtime Interface) and gRPC (Remote procedure call) service in Kubernetes environment . In Business Intelligence , there are some file format as ORC and parquet which occurs an efficient analysis due to their column storage type. As you see, each file format include his own specify and interest according to the use cases. 
+For instance, CSV is a file format which is very understandably. In case of web API or web development, JSON is privileged while in some cases XML could do the same work. 
+The latest format type has an huge advantage when it's coming to standardizing.
+In terms of streaming processing, the favorite format are AVRO and Protocol buffer regarding their good ingestion. In addition, protocol buffer is the stand of CRI (Container Runtime Interface) and gRPC (Remote procedure call) service in Kubernetes environment . In Business Intelligence , there are some file format like ORC and parquet which occur an efficient analysis due to their column storage type. Finally, each file format includes its own specificities and advantages according to the use cases. 
 
-Thus in this description, we would be covering firstly these various consideration into take account when selecting one of them (storage type, queries types, batch/versus streaming,...) then end up with detailed description of each file format named above.
+In this description, we would like to cover firstly these various considerations to keep in mind when one format type (storage type, queries types, batch/versus streaming,...), further we will end up with detailed descriptions of each file format named above.
 
 ## [**Consideration to be taken into account for choosing a file format**]()
 
-The choice of a big data format need to known whether a row or column-based format is best suited to your objectives. In row based storage, the data is stored row by row, such that the first column of a row will be next to the last column of the previous row. So, these kind of architecture are appropriate to add data easily and quickly too. It is suitable for situations where the entire row of data needs to be processed simultaneously. That is commonly used for Online Transactional Processing (OLTP). OLTP systems process all kinds of queries (Read, Insert, Update and Delete)
+The choice of a big data format need to known whether a row or column-based format is best suited to your objectives. In row based storage, the data is stored row by row, such that the first column of a row will be next to the last column of the previous row. So, these kind of architecture are appropriate to add data easily and quickly by the way. It is suitable for situations where the entire row of data needs to be processed simultaneously. That is commonly used for Online Transactional Processing (OLTP). OLTP systems process all kinds of queries (Read, Insert, Update and Delete)
 
-Inversely, in column-based storage, the data is stored such that each row of a column will be next to other rows from that same column. That's most useful when performing analytics queries that require only a subset of columns examined over very large data sets called OLAP (OnLine Analytical Processing) query. OLAP is an approach designed to quickly answer analytics queries involving multiple dimensions. This approach has played a critical role in business intelligence analytics, especially in regards to Big Data. The data aggregation and pre-calculation enabled by OLAP query, have proven to be a great way to avoid the excessive processing times of lecture. Because it lets you ignore all the data that doesn't apply to a particular query. 
+Inversely, in column-based storage, the data is stored such that each row of a column will be next to other rows from that same column. That is most useful when performing analytics queries that require only a subset of columns examined over very large data sets called OLAP (OnLine Analytical Processing) query. OLAP is an approach designed to quickly answer analytics queries involving multiple dimensions. This approach has played a critical role in business intelligence analytics, especially regarding to Big Data. The data aggregation and pre-calculation enabled by OLAP query, have proven to be a great way to avoid the excessive processing times of lecture. Because it lets you ignore all the data that doesn't apply to a particular query. 
 
 By contrast, if you were working with a row-oriented storage and you wanted to know, the average population density in cities with more than a million people, your query would access each record in the table (meaning all of its fields) to get the information from the two columns whose data you needed. That would involve a lot of unnecessary disk seeks and disk reads, which also impact performance. 
 Speaking of disk reads, columnar databases could boost performance in another way by reducing the amount of data that needs to be read from disk. Thus, row-oriented databases are still the best choice for OLTP applications, while column-oriented databases are generally better for OLAP. 
@@ -20,16 +21,17 @@ Speaking of disk reads, columnar databases could boost performance in another wa
 
 *  __Splittable__
 
-In case of distributed environment, it is important to have a file that can be divide into several pieces. That's the case of Hadoop which stores and processes data in chunk. So, be able to begin reading data at any point within a file is helpful in order to take fullest advantage of Hadoop’s distributed processing ([documentation](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html)). That why taking account the splittable is very important aspects for scalable task parallel programming. This way of structured (splitted and partitioned data) could participate of lecture optimized since you only read or process the block of data which are requisite. 
+In case of distributed environment, it is important to have a file that can be divide into several pieces. That's the case of Hadoop which stores and processes data in chunk. So, be able to begin reading data at any point within a file is helpful in order to take the fullest advantages of Hadoop’s distributed processing ([documentation](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html)). 
+This is the reason why it is important to take account the splittable for scalable task parallel programming. This way of structured (splitted and partitioned data) could participate of lecture optimized since you only read or process the block of data which are requisite. 
 Unfortunately, JSON and XML which doesn't take advantage of that because they are not splittable.
 
 * __Compression (Bzip2, LZO, Sappy,...)__
 
-Within a distributed system, data being stored in disc, this one is often slower to access that why it seems relevant to compress data. Compression enables to reduce data storage space on disk; increase the performance of lecture and readable on the disc ; also improve the speed of file transfer over the network. 
+Within a distributed system, data are stored in disc which is often slower to access so it seems relevant to compress data. Compression enables to reduce data storage space on disk; increase the performance of lecture and readable on the disc ; also improve the speed of file transfer over the network. 
 In addition, column based storage type is very fast and better to compress than row based storage since you're storing similar pieces of data together.
 Generally, text formats types are more compressible than a binary format. It could be due to their file size. For instance compress XML being a file format which is verbose and might have repeated, is  
 more reducible compare to video file.
-There are many kind of compression algorithm which differ according of the ratio of compression, speed, performance, splittable,... [documentation](https://github.com/Sohou08/Hadoop-Spark/tree/master/file_format/compression). 
+There are many kind of compression algorithm which differ according of the ratio of compression, speed, performance, splittable,... [For more information about compression](https://github.com/Sohou08/Hadoop-Spark/tree/master/file_format/compression). 
 
 * __Streaming and Batch__
 
@@ -97,6 +99,7 @@ It cannot be splittable compare to JSON lines. This one essentially consists of 
                                    ]
         }
 ~~~ 
+
 [Example of JSON lines](https://hackernoon.com/json-lines-format-76353b4e588d):
 ~~~{r}
 {"id":1,"father":"Mark","mother":"Charlotte","children":["Tom"]}
@@ -175,7 +178,7 @@ Protocol buffer is language-neutral, an extensible way of serializing structured
     * Protocol Buffers are not designed to handle large messages. Since it doesn't support random access. You'll have to read the whole file, even if you only want to access a specific item.
 * __Ecosystems__ 
     * provides tools to generate code for the most used programming languages around, like JavaScript, Java, PHP, C#, Ruby, Objective C, Python, C++ and Go
-    * is a format support of CRI and gRPC in kubernetes [documentation](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/). CRI is a plugin interface which enables kubelet to use a wide variety of container runtimes, without the need to recompile. RPC is indeed is a network protocol for making procedure calls on a remote computer using an application server.
+    * is a format support of CRI and gRPC in kubernetes [info](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/). CRI is a plugin interface which enables kubelet to use a wide variety of container runtimes, without the need to recompile. RPC is indeed is a network protocol for making procedure calls on a remote computer using an application server.
     * ProfaneDB is a database for Protocol Buffer objects.
   
 ~~~{r}
