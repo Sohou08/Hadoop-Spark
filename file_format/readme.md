@@ -18,6 +18,7 @@ Inversely, in column-based storage, the data is stored such that each row of a c
 By contrast, if you were working with a row-oriented storage and you wanted to know, the average population density in cities with more than a million people, your query would access each record in the table (meaning all of its fields) to get the information from the two columns whose data you needed. That would involve a lot of unnecessary disk seeks and disk reads, which also impact performance. 
 Speaking of disk reads, columnar databases performs well the process by reducing the amount of data that needs to be read from disk. Thus, row-oriented databases are still the best choice for OLTP applications, while column-oriented databases are generally better for OLAP. 
 
+![2](https://user-images.githubusercontent.com/51121757/81609463-db00d680-93cf-11ea-9b11-786b494e0bd7.JPG)
 
 *  __Splittable__
 
