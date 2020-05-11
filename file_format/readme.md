@@ -193,22 +193,20 @@ syntax = "proto3";
 
 ### 6. Parquet
 
-Parquet is a column-oriented data storage format of the Apache Hadoop ecosystem. It is similar to the other columnar-storage file formats available in Hadoop namely RCFile and ORC. It is compatible with most of the data processing frameworks in the Hadoop environment. It provides efficient data compression and encoding schemes with enhanced performance to handle complex data in bulk. 
-Parquet is a binary file containing  metadata about their content. The column metadata for a Parquet file is stored at the end of the file, which allows for fast, one-pass writing. Parquet is optimized for the write Once read many (WORM). 
+Parquet is an open source file format for Hadoop ecosystem. Its design is a combined effort between Twitter and Cloudera for an efficient data storage for analytics. Parquet store data by column-oriented like ORC format. It provides efficient data compression and encoding schemes with enhanced performance to handle complex data in bulk. Parquet is a binary file containing metadata about their content. The column metadata is stored at the end of the file, which allows for fast, one-pass writing. Parquet is optimized for the write Once read many (WORM). 
 
  * __Advantage__
-     * splittable and compressible 
-     * organizing by column allows for better compression, as data is more homogeneous.
-     * efficient for OLAP query
-     * supports schema evolution
-     * is not human readable
-     * supports batch/streaming processing
+     * Parquet is splittable 
+     * Organizing by column, It allows a better compression, as data is more homogeneous.
+     * It is very efficient for OLAP query.
+     * It supports schema evolution and batch/streaming processing
  * __Drawback__
-     * difficult to make a update of parquet table unless you delete and recreate it again.
+     * Parquet is not human readable
+     * It difficult to make it update unless you delete and recreate it again.
  * __Ecosystems__
-     * gives a efficient analysis in case of BI (Business Intelligence)
-     * is very fast to read in Spark environment
-     * aside Spark and Impala; Arrow, Drill are part of the most compatible platforms of parquet.
+     * It gives a efficient analysis in BI (Business Intelligence)
+     * Parquet is very fast to read in Spark environment
+     * Aside Spark and Impala; Arrow, Drill are part of the most compatible platforms of parquet.
      
      
    ![parquet](https://user-images.githubusercontent.com/51121757/80372035-c3333980-888a-11ea-87af-97425e00c476.JPG)
@@ -221,10 +219,10 @@ In February 2013, ORC format was announced by Hortonworks in collaboration with 
 ORC file contains groups of row data called stripes, along with auxiliary information in a file footer. At the end of the file a postscript holds compression parameters and the size of the compressed footer. The default stripe size is 250 MB. Large stripe sizes enable large efficient reads from HDFS.
 
   * __Advantage__
-      * compressible
+      * ORC is compressible
       * It reduces the size of the original data up to 75%
       * ORC is more efficient for OLAP than OLTP queries
-      * It supports batch processing 
+      * It supports batch/streaming processing 
   * __Drawback__
       * ORC can’t be load data directly into ORCFILE
       * It does not support schema evolution
