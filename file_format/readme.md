@@ -155,7 +155,6 @@ Avro is a row-oriented remote procedure call and data serialization framework de
     * It widely used in many application (Kafka, Spark, ... )
     * Avro provides a remote procedure call (RPC)
     
-      
    ![e.g. AVRO file](https://user-images.githubusercontent.com/51121757/80033375-8232d200-84e4-11ea-9531-076f72e30bea.JPG)
 
 [Source](https://blog.clairvoyantsoft.com/big-data-file-formats-3fb659903271)
