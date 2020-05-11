@@ -110,20 +110,19 @@ It cannot be splittable compare to JSON lines. This one essentially consists of 
 
 ### 3. XML 
 
-XML is a input text format. It makes it possible to define languages which are more or less complex but which make it possible to establish file format standards for exchanges between applications. As JSON,  XML is generally used to serialize, encapsulate, and exchange data. XML syntax is verbose, especially for human readers, relative to other alternatives ‘text-based’ formats. 
+XML is a input text format. It makes it possible to define languages which are more or less complex but which make it possible to establish file format standards for exchanges between applications. As JSON, XML is generally used to serialize, encapsulate, and exchange data. XML syntax is verbose, especially for human readers, relative to other alternatives ‘text-based’ formats. 
 
 * __Advantage__
-    * is a data exchange format
-    * supports batch/streaming processing
-    * stores meta data with data and support schema evolution
-    * having a syntax verbose, enable to have a good ratio of compression compare to JSON file
+    * XML is a data exchange format and supports batch/streaming processing
+    * It stores meta data with data and supports schema evolution
+    * Being a verbose format, It provides to have a good ratio of compression compare to JSON file
 * __Drawback__
-    * is not splittable since XML has an opening tag at the beginning and a closing tag at the end. You cannot start processing at any point in the middle of those tags.
-    * increase in data size and processing time because the document size is often bulky and with big files, the tag structure makes it huge and complex to read which occurs slow process in parsing, leading also to slower data transmission
-    * is difficult to be parsed due to his escape character which might be in different form (" " ' ' < < > > & &). The alternative used case is often HTML which only has a simple character (< < > >).
+    * It is not splittable since XML has an opening tag at the beginning and a closing tag at the end. You cannot start processing at any point in the middle of those tags.
+    * It increases in data size and processing time because the document size is often bulky and with big files. The tag structure makes it huge and complex to read which occurs slow process in parsing, leading also to slower data transmission
+    * XML is difficult to be parsed due to its escape character which might be in different form (" " ' ' < < > > & &). The alternative used case is often HTML which only has a simple character (< < > >).
      
 * __Ecosystems__
-    * is practically no used in any environment cause it bring many disadvantage in term of storage or exchange
+    * XML is practically no used in any enterprise cause it bring many disadvantage in term of storage or exchange
     
 ~~~ {r}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -136,27 +135,26 @@ XML is a input text format. It makes it possible to define languages which are m
   </scientists>
 ~~~ 
     
-  [source](https://github.com/facebookarchive/hadoop-20/blob/master/src/hdfs/hdfs-default.xml)
+  [source](https://www.alsacreations.com/article/lire/609-XML-en-quelques-mots.html)
        
 
 ### 4. AVRO
 
-AVRO stored his schema in JSON format while the data is stored in binary format, minimizing file size and maximizing efficiency and to be compacted easily. It attach metadata into their data in each record. 
+Avro is a row-oriented remote procedure call and data serialization framework developed within Apache's Hadoop project. It stored its schema in JSON format while the data is stored in binary format, minimizing file size and maximizing efficiency and to be compacted easily. It attach metadata into their data in each record. 
 
 * __Advantage__
-    * is splittable (AVRO has a sync marker to separate the block)
-    * is good file format for data exchange. 
-    * has a data storage which is very compact, fast and efficient 
-    * is compressible (at different time and independently)
-    * highly support schema evolution
-    * supports batch and mainly a streaming engine
-    * has fast serialization process
+    * Avro is a data serialization system
+    * It is splittable (AVRO has a sync marker to separate the block) and compressible
+    * Avro is good file format for data exchange and has a data storage which is very compact, fast and efficient for analytics
+    * It highly support schema evolution (at different time and independently)
+    * It supports batch and mainly a streaming engine
 * __Drawback__
-    * no readable by human
-    * has a limited environment since all languages don't occur a encoded or decoded.
-    
+    * Its data is not readable by human
+    * Avro has a limited environment since all languages don't occur a encoded or decoded.
 * __Ecosystems__ 
-    * widely used in many application (kafka, spark, ... )
+    * It widely used in many application (Kafka, Spark, ... )
+    * Avro provides a remote procedure call (RPC)
+    
       
    ![e.g. AVRO file](https://user-images.githubusercontent.com/51121757/80033375-8232d200-84e4-11ea-9531-076f72e30bea.JPG)
 
@@ -164,31 +162,30 @@ AVRO stored his schema in JSON format while the data is stored in binary format,
     
 ### 5. Protocol Buffer
 
-Protocol buffer is language-neutral, an extensible way of serializing structured data for use in communications protocols, data storage, and more. You can easily read it and understand it as an human. The schema is needed to generate code and read the data. 
+Protocol buffer is language-neutral, an extensible way of serializing structured data for use in communications protocols, data storage, and more. It is easy to read and understandably by human. The schema is needed to generate code and read the data. 
    
 * __Advantage__
-    * data fully typed
-    * supports schema evolution
-    * Supports batch/streaming
-    * used to serialize data as AVRO
-    * validate the structure. Having a predefined and larger set of data types, messages serialized on Protobuf can be automatically validated by the code that is responsible to exchange them.
+    * Its data is fully typed
+    * Protobuf supports schema evolution and batch/streaming processing
+    * It is used to serialize data as AVRO
+    * It validates the structure. Having a predefined and larger set of data types, messages serialized on Protobuf can be automatically validated by the code that is responsible to exchange them.
 * __Drawback__
-    * No splittable and No Compressible
-    * doesn't support Map reduce
-    * needed a reference file to be decoded 
+    * Protobuf is not splittable and not compressible
+    * It doesn't support Map reduce
+    * It needed a reference file to be decoded 
     * Protocol Buffers are not designed to handle large messages. Since it doesn't support random access. You'll have to read the whole file, even if you only want to access a specific item.
 * __Ecosystems__ 
-    * provides tools to generate code for the most used programming languages around, like JavaScript, Java, PHP, C#, Ruby, Objective C, Python, C++ and Go
-    * is a format support of CRI and gRPC in kubernetes [info](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/). CRI is a plugin interface which enables kubelet to use a wide variety of container runtimes, without the need to recompile. RPC is indeed is a network protocol for making procedure calls on a remote computer using an application server.
+    * It provides tools to generate code for the most used programming languages around, like JavaScript, Java, PHP, C#, Ruby, Objective C, Python, C++ and Go
+    * Protobuf is a format support of gRPC in kubernetes [info](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/). RPC is indeed is a network protocol for making procedure calls on a remote computer using an application server.
     * ProfaneDB is a database for Protocol Buffer objects.
   
 ~~~{r}
-syntax = "proto3";
-  message Mymessage {
-  int32 id = 1;
-  string first_name = 2;
-  bool is_validated = 3;
-                    } 
+      
+      message Person {
+      required string name = 1;
+      required int32 id = 2;
+      optional string email = 3;
+      }                          
 ~~~
 
 ### 6. Parquet
