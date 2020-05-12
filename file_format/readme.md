@@ -46,7 +46,7 @@ The schema will store the definition of each attribute and its types. Unless you
 
 ### 1. CSV 
 
-CSV is a text Input Format and use newline as the record delimiter with an optional header. It is human-readable and easy to edit manually, processed by almost all existing applications. CSV doesn't support schema evolution but sometime the header is optionally considered like the schema of the data.
+CSV is a text input format and use newline as the record delimiter with an optional header. It is human-readable and easy to edit manually, processed by almost all existing applications. CSV doesn't support schema evolution but sometime the header is optionally considered like the schema of the data.
 CSV is not splittable because it doesn't contain a specific character where you could based to split the text while remaining relevant. Most of case in big data, CSV seems to be used for processing but that's generally TSV format which is used strictly speaking. 
 Indeed, CSV file format is not fully standardized. The field delimiters could be for example, colon or semicolons which become difficult to parse when the field itself may also contain these kind of delimiter or even embedded line breaks. In addition, the field data could be enclosed by a quotation marks which is sometime not relevant for knowing the begin or end of the text. Finally, It include an escape character which occurs many complexity of parsing. 
 Inversely, TSV is generally delimited by a TAB or a comma sometime enabling to distinguish easily each field. Its major advantage is bound to the fact that it haven't an escape character. According these characteristics, TSV is usually more simple to parse than CSV and mainly used in big data case.
@@ -57,7 +57,7 @@ Inversely, TSV is generally delimited by a TAB or a comma sometime enabling to d
        * It doesn't support null value 
        * Parsing and reading a CSV format require a programs in order to handle the escape character
        * CSV doesn't support schema evolution
-       * It's not a specific format because every one has its own interpretations
+       * It's not a specific format because everyone has its own interpretations
    * __Ecosystems__ 
        * It is supported by a wide range of applications (Hadoop, spark, kafka,...)
        * Being generally less recommended, it is one of the most popular formats used
@@ -71,26 +71,25 @@ Vic Crumb,Shortstop,"""Fat Vic"", ""Icy Hot""",1911-1912
 
 ### 2. JSON (JavaScript object notation) 
 
-JSON is a text Input Format containing record which might be in any form (string, integer, booleans, array, object, key-value, nested data...). By virtue of being both human and machine readable, and comparatively simple to implement support for in other languages, JSON quickly moved beyond the web page, and into software everywhere. It support serialization and deserialization process.
-It cannot be splittable compare to JSON lines. This one essentially consists of several lines where each individual line is a valid JSON object, separated by newline character `\n`. That take an advantage to be splittable compared to the standard format. The difference between them is more related to an aesthetic advantage since JSON line separate objects by a line break. This make you sure that the next line is a new objects then easy to be used as reference for splitting data. 
+JSON is a text input format containing record which might be in any form (string, integer, booleans, array, object, key-value, nested data...). Being human and machine readable, JSON is relatively lightweight format and privileged in web application. It widely supported by many software and comparatively simple to implement in multiples languages. JSON supports serialization and deserialization process. Its major inconvenience is related to its lack of splittable. 
+The alternative used format is generally a JSON lines which is splittable. It contains several lines where each individual line is a valid JSON object, separated by newline character `\n`. Its main difference compare to the standard format is related to an aesthetic advantage since JSON line separate objects by a line break. This make you sure that the next line is a new objects so it will be easy to be used as reference for splitting data. 
 
 * __Advantage__
-    * is a simple syntax. It can be opened by any text editor and supported natively by many languages. There are many tools enabling to validate his schema (e.g.JSON-Spec python library). 
-    * is a privilege format in web applications
-    * is compressible and used as data exchange format
-    * supports batch and streaming processing
-    * store metadata with data and support schema evolution
-    * fully typed performing the compiler optimization.
-    * lightweight text-based format in comparison to XML 
+    * JSON is a simple syntax. It can be opened by any text editor
+    * There are many tools enabling to validate its schema (e.g.JSON-Spec python library)
+    * It is a privileged format in web applications
+    * JSON is compressible and used as data exchange format
+    * It supports batch and streaming processing
+    * It stores metadata with data and supports schema evolution
+    * JSON is lightweight text-based format in comparison to XML 
 * __Drawback__
-    * No splittable 
-    * Lack indexing 
+    * JSON is not splittable and Lack indexing 
 * __Ecosystems__ 
-    * is privileged format for web applications.
-    * is privileged exchange format for NoSQL databases. As example, we could notice BJSON used in MongoDB database. BSON’s binary structure encodes type and length information, which allows it to be parsed much more quickly than the standard format. However, that doesn’t mean you can’t think of MongoDB as a JSON database (JSON text). In addition, this structured way of JSON text is easier to modify there (MongoDB) than in structured database as Postgres where you'd need to extract the whole document for changing.
-    * is a language used in GraphQL by bringing also a data fully typed. 
-    GraphQL is a query language for your API, and a server-side runtime for executing queries by using a type system you define for your data. GraphQL isn't tied to any specific database or storage engine and is instead backed by your existing code and data.
-        
+    * It is privileged format for web applications and exchange format for NoSQL databases
+    For example, in case of MongoDB, the use of BSON is noticed instead the standard format. BSON’s binary structure encodes type and length information, which allows it to be parsed much more quickly than the standard format. However, that doesn’t mean you can’t think of MongoDB as a JSON database (JSON text). In addition, the architecture of JSON text is easier to modify for instance in MongoDB than in structured database as Postgres where you'd need to extract the whole document for changing.
+    * It is a used language in GraphQL by bringing also a data fully typed. 
+    GraphQL is a query language for an API. Instead of working with rigid server-defined endpoints, you can send queries to get exactly the data you are looking for in one request ([documentation](https://www.howtographql.com/basics/1-graphql-is-the-better-rest/)).
+          
 [Example of JSON](https://docs.microsoft.com/bs-latn-ba/azure/hdinsight/hadoop/using-json-in-hive):
 ~~~ {r}
        {
