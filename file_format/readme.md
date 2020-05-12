@@ -46,14 +46,13 @@ The schema will store the definition of each attribute and its types. Unless you
 
 ### 1. CSV 
 
-CSV is a text Input Format and use newline as the record delimiter with an optional header. It is human-readable and easy to edit manually, processed by almost all existing applications. CSV doesn't support schema evolution but sometime the header is optionally considered as the schema of the data.
+CSV is a text Input Format and use newline as the record delimiter with an optional header. It is human-readable and easy to edit manually, processed by almost all existing applications. CSV doesn't support schema evolution but sometime the header is optionally considered like the schema of the data.
 CSV is not splittable because it doesn't contain a specific character where you could based to split the text while remaining relevant. Most of case in big data, CSV seems to be used for processing but that's generally TSV format which is used strictly speaking. 
-Indeed, CSV file format is not fully standardized. The field delimiters could be for example, colon or semicolons which become difficult to parse when the field itself may also contain these kind of delimiter or even embedded line breaks. In addition, the field data could be enclosed by a quotation marks which is sometime not relevant for knowing the begin or end of the text. Finally, CSV include an escape character which occurs many complexity of parsing. 
-Inversely, TSV is generally delimited by a TAB or a comma sometime enabling to distinguish easily each field. It doesn't support an escape character. According these characteristics, TSV is usually more simple to parse than CSV and mainly used in big data case.
+Indeed, CSV file format is not fully standardized. The field delimiters could be for example, colon or semicolons which become difficult to parse when the field itself may also contain these kind of delimiter or even embedded line breaks. In addition, the field data could be enclosed by a quotation marks which is sometime not relevant for knowing the begin or end of the text. Finally, It include an escape character which occurs many complexity of parsing. 
+Inversely, TSV is generally delimited by a TAB or a comma sometime enabling to distinguish easily each field. Its major advantage is bound to the fact that it haven't an escape character. According these characteristics, TSV is usually more simple to parse than CSV and mainly used in big data case.
 
    * __Advantage__
-       * compressible
-       * batch/streaming processing      
+       * CSV is compressible and supports batch/streaming processing      
    * __Drawback__
        * It doesn't support null value 
        * Parsing and reading a CSV format require a programs in order to handle the escape character
