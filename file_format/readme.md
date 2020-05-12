@@ -88,7 +88,7 @@ The alternative used format is generally a JSON lines which is splittable. It co
     * It is a used language in GraphQL by bringing also a data fully typed. 
     GraphQL is a query language for an API. Instead of working with rigid server-defined endpoints, you can send queries to get exactly the data you are looking for in one request ([documentation](https://www.howtographql.com/basics/1-graphql-is-the-better-rest/)).
           
-[Example of JSON](https://docs.microsoft.com/bs-latn-ba/azure/hdinsight/hadoop/using-json-in-hive):
+[Example of JSON](https://docs.microsoft.com/bs-latn-ba/azure/hdinsight/hadoop/using-json-in-hive)
 ~~~ {r}
        {
           "StudentId": "trgfg-5454-fdfdg-4346", # a string
@@ -104,7 +104,7 @@ The alternative used format is generally a JSON lines which is splittable. It co
         }
 ~~~ 
 
-[Example of JSON lines](https://hackernoon.com/json-lines-format-76353b4e588d):
+[Example of JSON lines](https://hackernoon.com/json-lines-format-76353b4e588d)
 ~~~{r}
 {"id":1,"father":"Mark","mother":"Charlotte","children":["Tom"]}
 {"id":2,"father":"John","mother":"Ann","children":["Jessika","Antony","Jack"]}
