@@ -103,7 +103,6 @@ The alternative used format is generally a JSON lines which is splittable. It co
                                    ]
         }
 ~~~ 
-
 [Example of JSON lines](https://hackernoon.com/json-lines-format-76353b4e588d)
 ~~~{r}
 {"id":1,"father":"Mark","mother":"Charlotte","children":["Tom"]}
@@ -182,7 +181,6 @@ Protocol buffer is language-neutral, an extensible way of serializing structured
     * ProfaneDB is a database for Protocol Buffer objects.
   
 ~~~{r}
-      
       message Person {
       required string name = 1;
       required int32 id = 2;
@@ -192,7 +190,7 @@ Protocol buffer is language-neutral, an extensible way of serializing structured
 
 ### 6. Parquet
 
-Parquet is an open source file format for Hadoop ecosystem. Its design is a combined effort between Twitter and Cloudera for an efficient data storage for analytics. Parquet store data by column-oriented like ORC format. It provides efficient data compression and encoding schemes with enhanced performance to handle complex data in bulk. Parquet is a binary file containing metadata about their content. The column metadata is stored at the end of the file, which allows for fast, one-pass writing. Parquet is optimized for the write Once read many (WORM). 
+Parquet is an open source file format for Hadoop ecosystem. Its design is a combined effort between Twitter and Cloudera for an efficient data storage for analytics. Parquet stores data by column-oriented like ORC format. It provides efficient data compression and encoding schemes with enhanced performance to handle complex data in bulk. Parquet is a binary file containing metadata about their content. The column metadata is stored at the end of the file, which allows for fast, one-pass writing. Parquet is optimized for the write Once read many (WORM). 
 
  * __Advantage__
      * Parquet is splittable 
