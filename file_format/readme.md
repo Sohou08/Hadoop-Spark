@@ -95,7 +95,7 @@ The alternative used format is generally a JSON lines which is splittable. It co
           "Grade": 7, # an integer
           "StudentClassCollection": [
                 {
-                    "ClassId": 89084343, # a integer
+                    "ClassId": 89084343, # an integer
                     "Score": NULL,
                     "amount": 12.60 # a float
                     "PerformedActivity": false # a boolean
