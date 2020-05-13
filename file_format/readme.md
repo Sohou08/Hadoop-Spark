@@ -233,12 +233,11 @@ ORC file contains groups of row data called stripes, along with auxiliary inform
 
 ## [**Conclusion**]()
 
-In general, reading or writing fast according to the type of storage is very related to the kind of query tied to the property of each file format. Usually, row-oriented databases are well-suited for OLTP-like workloads whereas column-oriented systems is well suited of OLAP query. Column data in column based storage is of uniform type; therefore, it will be more easy and better to compress compared a row based storage. 
+In general, reading or writing fast according to the type of storage is very related to the kind of query tied to the property of each file format. Usually, row-oriented databases are well-suited for OLTP-like workloads whereas column-oriented systems is well suited of OLAP query. The column based storage contains a uniform type in each column, thus it will bring a better compression compare to a row based storage. 
 
-In term of comparison, JSON, XML are less used in data processing regarding to their lack of splittable. JSON line is however the most suitable to be process in parallel. Generally, Json is the  format file of web applications, serialization and is well known to support schema evolution as AVRO.
-In addition to the buffer protocol, AVRO  is considered the privilege format of streaming processing due to fact his ability to support schema evolution. It is also splittable and compressible which occurs it simultaneously the file format appropriate in big data ecosystem. That's what protocol buffer lack about splittable and compressible. However, being a language fully typed as JSON , it bring better performance for compiler optimization and heavily used in kubernetes in case of CRI and gPRC.
-
-The last two formats (ORC and parquet) are optimized the cost storage by avoiding repeated data. They are efficients for Business Intelligence and compatibles with Impala and Hive ecosystems.
+In term of comparison, JSON, XML are less used in parallel task data processing regarding to their lack of splittable. JSON line is however the most suitable to be process in parallel. On the other hand, JSON is privileged format of web applications. It is well known to support schema evolution as AVRO.
+Being both splittable and compressible, AVRO is considered the privilege format of streaming processing which occurs it simultaneously the file format appropriate in big data ecosystem. Even protocol buffer is efficient in streaming processing, it is not splittable and not compressible. However, having a language fully typed, it bring better performance for compiler optimization. Protocol buffer is heavily used in kubernetes environment mainly for gPRC process.
+Finally, the last two formats (ORC and parquet) are optimized the cost storage by avoiding repeated data. They are very efficients for Business Intelligence analytics and are compatibles with Impala and Hive ecosystems.
 
 In summary, it is important to bear in mind that all these differences between theses files format depend really of the use cases. Some of them could be used by fitting in order to respond a specific purpose.
   
