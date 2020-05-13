@@ -1,7 +1,7 @@
 
 # BENCHMARK STUDY OF DIFFERENT FILE FORMATS: CSV, JSON, XML, PROTOCOL BUFFER, AVRO, PARQUET, ORC #
 
-There are different types of files formats according of the purpose of analysis. Each format has its own pros and cons depending upon the use cases. This is really important to take account when choosing a specific format type. There is some type of format which is more relevant in certain analysis as e.g Business Intelligence, data exchange over network, web application, batch or stream processing,...
+In data processing, there are different types of files formats according of the purpose of analysis. Each format has its own pros and cons depending upon the use cases. This is really important to take account when choosing a specific format type. There is some type of format which is more relevant in certain analysis as e.g Business Intelligence, data exchange over network, web application, batch or stream processing,...
 
 For instance, CSV format is very understandably. In case of web API or web development, JSON is privileged while in some cases XML could do the same work. The latest format type has an huge advantage when it's coming to standardizing. In terms of streaming processing, AVRO and Protocol buffer are a privileged format regarding their good ingestion. In addition, protocol buffer is the stand of gRPC (Remote procedure call) service in Kubernetes environment. There are some file format like ORC and parquet which occur an efficient analysis mainly in Business Intelligence due to their column storage type. Finally, each file format includes its own specificities and advantages according to the use cases. 
 
