@@ -258,7 +258,7 @@ Types|CSV | JSON | XML| AVRO| Protocol Buffer | Parquet | ORC
 [Schema evolution]()| :x:| :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:| :x:| :heavy_check_mark:|:x:|
 [Suitable for OLAP or OLTP]()| OLTP| OLTP| OLTP|OLTP| :x:| OLAP|OLAP|
 [Batch/stream]()|:heavy_check_mark:| :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:very efficient in streaming case | :heavy_check_mark: very efficient in streaming case|:heavy_check_mark:|:heavy_check_mark:|
-[Typed data]()|:x:| :heavy_check_mark:| :x:|:x:| :heavy_check_mark:|:x:|:x:|
+[Typed data]()|:x:| :x:| :x:|:x:| :heavy_check_mark:|:x:|:x:|
 
 [Documentation]()
 [e.g. File format comparison](https://2s7gjr373w3x22jf92z99mgm5w-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/Nexla-File-Format.png), [e.g. Comparison in terms of reading, space,storage, execution time,...](https://luminousmen.com/post/big-data-file-formats)
