@@ -229,7 +229,7 @@ ORC file contains groups of row data called stripes, along with auxiliary inform
       * Impala currently does not support ORC format
       
 
-   ![Screenshot from 2020-05-13 09-23-26](https://user-images.githubusercontent.com/51121757/81783410-92463c00-94fb-11ea-8fe7-0434eb9a8148.png)
+   ![Screenshot from 2020-05-13 09-28-10](https://user-images.githubusercontent.com/51121757/81783778-244e4480-94fc-11ea-8ede-04d03f3b06eb.png)
 
 [Source](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+ORC) 
 
