@@ -121,6 +121,7 @@ XML is a text format and stores data by row. It makes it possible to define lang
     * It is not splittable since XML has an opening tag at the beginning and a closing tag at the end. You cannot start processing at any point in the middle of those tags.
     * XML doesn't support array
     * The redundancy in syntax of XML causes higher storage and transportation cost when the volume of data is large.
+    * XML namespaces are problematic to use and namespace support can be difficult to correctly implement in an XML parser.
     * XML is difficult to be parsed due to its escape character which might be in different form (" " ' ' < < > > & &). The alternative used case is often HTML which only has a simple character (< < > >).
      
 * __Ecosystems__
