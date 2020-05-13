@@ -123,7 +123,6 @@ XML is a text format and stores data by row. It makes it possible to define lang
     * The redundancy in syntax of XML causes higher storage and transportation cost when the volume of data is large.
     * XML namespaces are problematic to use and namespace support can be difficult to correctly implement in an XML parser.
     * XML is difficult to be parsed due to its escape character which might be in different form (" " ' ' < < > > & &). The alternative used case is often HTML which only has a simple character (< < > >).
-     
 * __Ecosystems__
     * XML is practically no used in any enterprise because it brings many disadvantage in term of storage or exchange
     
@@ -140,7 +139,6 @@ XML is a text format and stores data by row. It makes it possible to define lang
     
   [source](https://www.alsacreations.com/article/lire/609-XML-en-quelques-mots.html)
        
-
 ### 4. AVRO
 
 Avro is a row-oriented remote procedure call and data serialization framework developed within Apache's Hadoop project. It stored its schema in JSON format while the data is stored in binary format, minimizing file size and maximizing efficiency and to be compacted easily. It attach metadata into their data in each record. 
@@ -206,7 +204,6 @@ Parquet is an open source file format for Hadoop ecosystem. Its design is a comb
      * Parquet is very fast to read in Spark environment
      * Aside Spark and Impala; Arrow, Drill are part of the most compatible platforms of parquet.
      
-     
    ![parquet](https://user-images.githubusercontent.com/51121757/80372035-c3333980-888a-11ea-87af-97425e00c476.JPG)
 
 [Source](https://blog.ippon.fr/2020/03/02/de-limportance-du-format-de-la-donnee-pratique-partie-2-2/) 
@@ -250,15 +247,15 @@ In summary, it is important to bear in mind that all these differences between t
 Types|CSV | JSON | XML| AVRO| Protocol Buffer | Parquet | ORC 
 --- | --- | --- | --- | --- |--- |--- |---
 [Format (text/binary)]()| text| text| text| text stored in JSON and data is binary format| text| binary|binary|
-[Row store]()| :heavy_check_mark:| :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:| :heavy_check_mark:| :x:|:x:|
-[Column store]()| :x:| :x:| :x:|:x:| :x:| :heavy_check_mark:|:heavy_check_mark:|
-[Splittable]()| :x:| :x: No the case of JSON line| :x:|:heavy_check_mark:| :x:| :heavy_check_mark:|:heavy_check_mark:|
+[Storage type]()| row| row| row|row| row| column|column|
+[Splittable]()| depend of used case| :x: not the case of JSON line| :x:|:heavy_check_mark:| :x:| :heavy_check_mark:|:heavy_check_mark:|
 [Compression]()| :heavy_check_mark:| :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:| :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:|
 [Data type]()| String, integer,boolean,...| any type (string, boolean,object,array,...| any type of data|text for the schema and binary for data| any type| binary|binary|
 [Ecosystems]()| most popular used format| API and development web| practically no used in any environment|kafka,spark,... | Kubernetes,ProfaneDB, doesn't support MapReduce| Impala, HIve,BigQuery, Spark,...|Hive,didn't support by Impala|
 [Schema evolution]()| :x:| :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:| :x:| :heavy_check_mark:|:x:|
-[Suitable for OLAP or OLTP]()| OLTP| OLTP| OLTP|OLTP| :x:| OLAP|OLAP|
-[Batch/stream]()|:heavy_check_mark:| :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:very efficient in streaming case | :heavy_check_mark: very efficient in streaming case|:heavy_check_mark:|:heavy_check_mark:|
+[Suitable for OLAP or OLTP]()| OLTP| OLTP| OLTP|OLTP| :OLTP:| OLAP|OLAP|
+[Batch]()|:heavy_check_mark:| :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:very efficient in streaming case | :heavy_check_mark: very efficient in streaming case|:heavy_check_mark:|:heavy_check_mark:|
+[stream]()|:heavy_check_mark:| :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:very efficient in streaming case | :heavy_check_mark: very efficient in streaming case|:x:|:x:|
 [Typed data]()|:x:| :x:| :x:|:x:| :heavy_check_mark:|:x:|:x:|
 
 [Documentation]()
