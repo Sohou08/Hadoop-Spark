@@ -254,7 +254,7 @@ Types|CSV | JSON | XML| AVRO| Protocol Buffer | Parquet | ORC
 [Ecosystems]()| most popular used format| API and development web| practically no used in any environment|kafka,spark,... | Kubernetes,ProfaneDB, doesn't support MapReduce| Impala, HIve,BigQuery, Spark,...|Hive,didn't support by Impala|
 [Schema evolution]()| :x:| :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:| :x:| :heavy_check_mark:|:x:|
 [Suitable for OLAP or OLTP]()| OLTP| OLTP| OLTP|OLTP| :OLTP:| OLAP|OLAP|
-[Batch]()|:heavy_check_mark:| :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:| :heavy_check_mark: very efficient in streaming case|:heavy_check_mark:|:heavy_check_mark:|
+[Batch]()|:heavy_check_mark:| :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
 [Stream]()|:heavy_check_mark:| :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:most efficient in this case | :heavy_check_mark: most efficient in this case|:x:|:x:|
 [Typed data]()|:x:| :x:| :x:|:x:| :heavy_check_mark:|:x:|:x:|
 
