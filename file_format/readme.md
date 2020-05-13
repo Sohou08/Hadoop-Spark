@@ -69,8 +69,7 @@ Vic Crumb;Shortstop;"""Fat Vic"", ""Icy Hot""";1911-1912
 
 ### 2. JSON (JavaScript object notation) 
 
-JSON is a text input format containing record which might be in any form (string, integer, booleans, array, object, key-value, nested data...). Being human and machine readable, JSON is relatively lightweight format and privileged in web application. It widely supported by many software and comparatively simple to implement in multiples languages. JSON supports serialization and deserialization process. Its major inconvenience is related to its lack of splittable. 
-The alternative used format is generally a JSON lines which is splittable. It contains several lines where each individual line is a valid JSON object, separated by newline character `\n`. Its main difference compare to the standard format is related to an aesthetic advantage since JSON line separate objects by a line break. This make you sure that the next line is a new objects so it will be easy to be used as reference for splitting data. 
+JSON is a text format containing a record which might be in any form (string, integer, booleans, array, object, key-value, nested data...). Being human and machine readable, JSON is relatively lightweight format and privileged in web application. It widely supported by many software and comparatively simple to implement in multiples languages. JSON supports serialization and deserialization process. Its major inconvenience is related to its lack of splittable. In this case, the alternative used format is generally a JSON lines. It contains several lines where each individual line is a valid JSON object, separated by newline character `\n`. Its main difference compare to the standard format is related to an aesthetic advantage since JSON line separate objects by a line break. This make you sure that the next line is a new objects so it will be easy to be used as reference for splitting data. 
 
 * __Advantage__
     * JSON is a simple syntax. It can be opened by any text editor
@@ -81,9 +80,9 @@ The alternative used format is generally a JSON lines which is splittable. It co
     * It stores metadata with data and supports schema evolution
     * JSON is lightweight text-based format in comparison to XML 
 * __Drawback__
-    * JSON is not splittable and Lack indexing 
+    * JSON is not splittable and lack indexing 
 * __Ecosystems__ 
-    * It is privileged format for web applications and exchange format for NoSQL databases
+    * It is privileged format for web applications and an exchange format for NoSQL databases
     For example, in case of MongoDB, the use of BSON is noticed instead the standard format. BSON’s binary structure encodes type and length information, which allows it to be parsed much more quickly than the standard format. However, that doesn’t mean you can’t think of MongoDB as a JSON database (JSON text). In addition, the architecture of JSON text is easier to modify for instance in MongoDB than in structured database as Postgres where you'd need to extract the whole document for changing.
     * It is a used language in GraphQL by bringing also a data fully typed. 
     GraphQL is a query language for an API. Instead of working with rigid server-defined endpoints, you can send queries to get exactly the data you are looking for in one request ([documentation](https://www.howtographql.com/basics/1-graphql-is-the-better-rest/)).
@@ -112,12 +111,12 @@ The alternative used format is generally a JSON lines which is splittable. It co
 
 ### 3. XML 
 
-XML is a input text format. It makes it possible to define languages which are more or less complex but which make it possible to establish file format standards for exchanges between applications. As JSON, XML is generally used to serialize, encapsulate, and exchange data. XML syntax is verbose, especially for human readers, relative to other alternatives ‘text-based’ formats. 
+XML is a text format and stores data by row. It makes it possible to define languages which are more or less complex but which make it possible to establish file format standards for exchanges between applications. As JSON, XML is generally used to serialize, encapsulate, and exchange data. XML syntax is verbose, especially for human readers, relative to other alternatives ‘text-based’ formats. 
 
 * __Advantage__
-    * XML is a data exchange format and supports batch/streaming processing
+    * XML supports batch/streaming processing
     * It stores meta data with data and supports schema evolution
-    * Being a verbose format, It provides to have a good ratio of compression compare to JSON file
+    * Being a verbose format, It provides a good ratio of compression compare to JSON file
 * __Drawback__
     * It is not splittable since XML has an opening tag at the beginning and a closing tag at the end. You cannot start processing at any point in the middle of those tags.
     * It increases in data size and processing time because the document size is often bulky and with big files. The tag structure makes it huge and complex to read which occurs slow process in parsing, leading also to slower data transmission
