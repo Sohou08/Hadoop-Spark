@@ -119,7 +119,8 @@ XML is a text format and stores data by row. It makes it possible to define lang
     * Being a verbose format, It provides a good ratio of compression compare to JSON file
 * __Drawback__
     * It is not splittable since XML has an opening tag at the beginning and a closing tag at the end. You cannot start processing at any point in the middle of those tags.
-    * It increases in data size and processing time because the document size is often bulky and with big files. The tag structure makes it huge and complex to read which occurs slow process in parsing, leading also to slower data transmission
+    * XML doesn't support array
+    * The redundancy in syntax of XML causes higher storage and transportation cost when the volume of data is large.
     * XML is difficult to be parsed due to its escape character which might be in different form (" " ' ' < < > > & &). The alternative used case is often HTML which only has a simple character (< < > >).
      
 * __Ecosystems__
