@@ -12,10 +12,10 @@ In this description, we would like to cover firstly these various considerations
 The first consideration when selecting a big data format might be whether row or column-based format is best suited to your objectives. In row based storage, the data is stored row by row, such that the first column of row will be next to the last column of the previous row. So, this architecture is appropriated to add data easily and quickly. It's also suitable in case where the entire row of data needs to be processed simultaneously. This is commonly used for Online Transactional Processing (OLTP). OLTP systems process all kinds of queries (Read, Insert, Update and Delete). It's very useful like query to manage day to day transactions of an organization. OLTP transactions are usually very specific in the task they perform, and usually involve a single record or a small selection of records. The main emphasis for OLTP systems is focus on very fast query processing, maintaining data integrity in multi-access environments and an effectiveness measured by number of transactions per second. 
 
 
-Inversely, in column-based storage, the data is stored such that each row of a column will be next to other rows from that same column. That is most useful when performing analytics queries which require only a subset of columns examined over very large data sets. This way of query is called OLAP (OnLine Analytical Processing) query. OLAP is an approach designed to quickly answer analytics queries involving multiple dimensions. This approach has played a critical role in business intelligence analytics, especially regarding to Big Data. The data aggregation and pre-calculation enabled by OLAP query, have proven to be a great way to avoid the excessive processing times of lecture. Because it lets you ignore all the data that doesn't apply to a particular query. 
+Inversely, in column-based storage, the data is stored such that each row of a column will be next to other rows from that same column. That is most useful when performing analytics queries which require only a subset of columns examined over very large data sets. This way of query is called OLAP (OnLine Analytical Processing) query. OLAP is an approach designed to quickly answer analytics queries involving multiple dimensions. This approach has played a critical role in business intelligence analytics, especially regarding to Big Data. The data aggregation enabled by OLAP query, have proven to be a great way to avoid the excessive processing times of lecture. Because it lets you ignore all the data that doesn't apply to a particular query. 
 
 By contrast, if you were working with a row-oriented storage and you wanted to know, the average population density in cities with more than a million people, your query would access each record in the table (meaning all of its fields) to get the information from the two columns whose data you needed. That would involve a lot of unnecessary disk seeks and disk reads, which also impact performance. 
-Speaking of disk reads, columnar databases performs well the process by reducing the amount of data that needs to be read from disk. Thus, row-oriented databases are still the best choice for OLTP applications, while column-oriented databases are generally better for OLAP.
+In sum, columnar databases performs well the process by reducing the amount of data that needs to be read from disk. Thus, row-oriented databases are still the best choice for OLTP applications, while column-oriented databases are generally better for OLAP query.
 
 [Example of row and column based storage]()
 ![2](https://user-images.githubusercontent.com/51121757/81609463-db00d680-93cf-11ea-9b11-786b494e0bd7.JPG)
@@ -24,7 +24,7 @@ Speaking of disk reads, columnar databases performs well the process by reducing
 
 In case of distributed environment, it is important to have a file that can be divided into several pieces. That's the case of Hadoop which stores and processes data in chunk. To be able to begin reading data at any point within a file is helpful in order to take the full advantages of Hadoop’s distributed processing ([documentation](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html)). 
 That's why it is important to take account the splittable for scalable task parallel programming. This architecture of partitioned data could participate on the optimized lecture since you only read or process the block of data which are requisite. 
-Unfortunately, JSON and XML which doesn't take advantage of that because they are not splittable.
+Unfortunately, JSON and XML doesn't take advantage of this consideration.
 
 * __Compression (Bzip2, LZO, Sappy,...)__
 
@@ -38,7 +38,7 @@ Stream processing allows to process data in real time as they arrive. It quickly
 
 * __Support Schema evolution, allowing us to change schema of file__
 
-The schema will store the definition of each attribute and its types. Unless your data is guaranteed to never change, you’ll need to think about schema evolution in order to figure out if your data schema changes over time. In other word, schema evolution allows you to update the schema used to write new data while maintaining backwards compatibility with the schema of your old data
+The schema will store the definition of each attribute and its types. Unless your data is guaranteed to never change, you’ll need to think about schema evolution in order to figure out if your data schema changes over time. In other word, schema evolution allows you to update the schema used to write new data while maintaining backwards compatibility with the schema of your old data.
 
 ## [**File format description**]()
 
@@ -58,12 +58,12 @@ Inversely, TSV is generally delimited by a TAB or a comma sometime enabling to d
        * It's not a specific format because everyone has its own interpretations
    * __Ecosystems__ 
        * It is supported by a wide range of applications (Hadoop, spark, kafka,...)
-       * Being generally less recommended, it is one of the most popular formats used
+       * Being generally less recommended (because it's not a standard format), CSV is one of the most popular formats used
 ~~~{r}
-Player Name,Position,Nicknames,Years Active
-Skippy Peterson,First Base,"""Blue Dog"", ""The Magician""",1908-1913
-Bud Grimsby,Center Field,"""The Reaper"", ""Longneck""",1910-1917
-Vic Crumb,Shortstop,"""Fat Vic"", ""Icy Hot""",1911-1912
+Player Name;Position;Nicknames;Years Active
+Skippy Peterson;First Base;"""Blue Dog"", ""The Magician""";1908-1913
+Bud Grimsby;Center Field;"""The Reaper"", ""Longneck""";1910-1917
+Vic Crumb;Shortstop;"""Fat Vic"", ""Icy Hot""";1911-1912
 ~~~
   [source](https://www.computerhope.com/issues/ch001356.htm)
 
