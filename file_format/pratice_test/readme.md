@@ -28,6 +28,7 @@ and supports many file formats (ORC, CSV, AVRO, Parquet,...). Embedding all thes
       * Update data or schema 
       * Aggregation (min, max,mean)
       * Map join
+      * ration of compression 
 
 ## Query and Results
 
