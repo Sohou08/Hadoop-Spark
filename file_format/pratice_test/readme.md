@@ -14,6 +14,8 @@ Embedding all these characteristics, Hive could be considered a relevant engine 
 
   * __datasets types__
   
+The utilization of various dataset will be intended in order to determine how each file format supports different type of data. 
+
       * document text
       * Unstructured data (wikipedia data)
       * Classic dataset (IMDB dataset)
