@@ -9,8 +9,8 @@ After a brief review of file format comparison ([theorical comparison](https://g
   
   * __Database Choice__
   
-Apache Hive is an SQL-like software used with Hadoop to give users the capability of performing SQL-like queries on it’s own language, HiveQL, quickly and efficiently. Inversly to Hadoop, Hive supports different type OLAP or OLTP query. Using hadoop, it's fully take advantage of the distributed data processing
-and supports many file formats (ORC, CSV, AVRO, Parquet,...). Embedding all these characteristics, Hive could be considered a relevant engine for a various types of request which will allow to make a good comparison between different file format.
+Apache Hive is an SQL-like software used with Hadoop to give users the capability of performing SQL-like queries on it’s own language, HiveQL, quickly and efficiently. Inversly to Hadoop, Hive supports different type OLAP or OLTP query. Using hadoop, it's fully take advantage of the distributed data processing and supports many file formats (ORC, CSV, AVRO, Parquet,...). 
+Embedding all these characteristics, Hive could be considered a relevant engine for a various types of request which will allow to make a good comparison between different file format.
 
   * __datasets types__
   
