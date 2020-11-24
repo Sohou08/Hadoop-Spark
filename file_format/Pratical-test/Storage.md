@@ -1,7 +1,7 @@
 
 # Performance comparison of different file formats (Storage)
 
-Choosing an appropriate file formats is essential, whether your data transits on the wire or is stored at rest. Each file format comes with its own advantages and disadvantages. We covered them in a precedent article presenting and comparing the [most popular file formats in Big data](/en/2020/07/23/benchmark-study-of-different-file-format/). In a follow up article, we will compare their performance according to multiple scenarios. The compression used for a given format greatly impact the query performances. This article will prepare the tables needed for this follow up article and takes the opportunity to compare the compression algorithms in term of storage spaces and generation time. It will also helps us to select the most appropriate compression algorithms for each format.
+Choosing an appropriate file formats is essential, whether your data transits on the wire or is stored at rest. Each file format comes with its own advantages and disadvantages. We covered them in a precedent article presenting and comparing the [most popular file formats in Big data](https://github.com/Sohou08/Hadoop-Spark/blob/master/file_format/readme.md). In a follow up article, we will compare their performance according to multiple scenarios. The compression used for a given format greatly impact the query performances. This article will prepare the tables needed for this follow up article and takes the opportunity to compare the compression algorithms in term of storage spaces and generation time. It will also helps us to select the most appropriate compression algorithms for each format.
 
 ## Database Choice
   
