@@ -80,7 +80,7 @@ Set hive.vectorized.execution.enabled = false;
 
 ## Performance evaluation criteria 
 
-Some metrics are provided by Hive and YARN while some others are specific to the selected engine such as [MR](/en/tag/MapReduce) and [Tez](https://tez.apache.org/). In our case, the Tez engine is used by default otherwise it can be set up as below. The metrics recorded from Tez are the `CPU` and `duration` time. 
+Some metrics are provided by Hive and YARN while some others are specific to the selected engine such as [MR](https://fr.wikipedia.org/wiki/MapReduce) and [Tez](https://tez.apache.org/). In our case, the Tez engine is used by default otherwise it can be set up as below. The metrics recorded from Tez are the `CPU` and `duration` time. 
 
 ```sql
 SET hive.execution.engine = tez
